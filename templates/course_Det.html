@@ -1,0 +1,107 @@
+ {% extends 'navbar.html' %}
+
+{% block head %}
+	<title>My Parliament - Course Details </title>
+
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="../static/css/course_det.css">
+	<link rel="stylesheet" href="../static/css/course_det_res.css">
+	<link rel="stylesheet" href="../static/css/simple-grid.css">
+	<link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/plyr.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/static/js/jquery.js"></script>
+    <script src="http://code.jquery.com/ui/1.12.0/jquery-ui.js" ></script>
+
+		<style>
+
+		.course_img_wrap{
+			background:url("../static/img/course_det.jpg");
+			background-size:cover;
+			background-position: center ; 
+			height:inherit;
+		}
+		a{
+			text-decoration: none;
+		}
+		li{
+			list-style: none;
+			color: black;
+			margin-top:8px;
+		}
+
+	</style>
+
+
+
+{% endblock %}
+
+{% block body %}
+
+<!-- Nav Bar Ends  -->
+
+
+<div class="row course_bar">
+	<div class="col-2 courses_h">COURSE</div>
+	<div class="col-7"></div>
+	<div class="col-3 search_input">
+		<input type="text" placeholder="Search" name="search">
+		<button class="search_btn">Search</button>
+	</div>
+</div>
+
+
+<div class="course_img">
+	<div class="course_img_wrap">
+
+	</div>
+</div>
+
+<!-- <div class="row course_name_det">
+	<div class="col-12">
+		<div class="course_name">Web UI/UX Design Course</div>
+		<div class="course_auth">By Random Person</div>
+	</div>
+</div> -->
+
+<div class="course_det_sec">
+	<div class="course_det_wrap">
+
+
+		<div class="contents_sec">
+			<div class="content_sec_wrap">
+				<ul class="course_index">
+					<li class="week">About This Course</li>
+					{% for week in weeks %}
+					<li ><div class="week">Week :{{loop.index}} </div>
+						<ul>
+							{% for lecture in week.lectures %}
+							<a href="/getlecture/{{lecture.lecture_id}}-{{week.course_id}}" target="loadingFrame"><li>{{lecture.title}}</li></a>
+							{% endfor %}
+						</ul>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+
+		<div class="course_det_right_sec">
+			
+ 			<iframe src="/course-content/{{course_id}}" width="100%" id="loadframe" name="loadingFrame" height="100%" onload="iframeLoaded()" style="overflow: hidden;border: none;" scrolling="no"></iframe> 
+
+		</div>
+
+
+	</div> <!-- Course Details Wrap ending tags -->
+</div>
+
+<script type="text/javascript">
+  function iframeLoaded() {
+      var iFrameID = document.getElementById('loadframe');
+      if(iFrameID) {
+            iFrameID.height = iFrameID.contentWindow.document.body.scrollHeight+100 + "px";
+      }   
+  }
+</script>
+
+{% endblock %}

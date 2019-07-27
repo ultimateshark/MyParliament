@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Khula|Maven+Pro|Dosis|');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800&display=swap');
+
+
+
+*{
+	font-family: 'Montserrat', sans-serif;
+}
+
+nav{
+	position: fixed;
+	width:100%;
+	left:0;
+	height:80px;
+	top:0px;
+	z-index:11;
+}
+
+.logo{
+	font-family: 'Josefin Sans',sans-serif;
+	font-size:1.7em;
+	position: absolute;
+	left:40px;
+	top:-20px;
+	padding-top:40px;
+	padding-left:10px;
+	padding-right:10px;
+}
+
+
+
+.list{
+	margin-right:80px;
+	padding-top:0px;
+	float:right;
+	color:#000;
+	font-family: 'khula',sans-serif;	
+}
+
+
+.list a{
+	display: inline;
+	font-weight: bold;
+	font-size: 1.4em;
+	color:#000;
+	text-decoration: none;
+}
+
+nav ul li{
+	display: inline;
+	padding-left:30px;
+}
+
+.wrap{
+	display: flex;
+	height: 100%;
+}
+
+
+.left_area{
+	flex:3;
+	background: linear-gradient(135deg , #145792 , #23AEBE);
+	margin-top:55px;
+}
+
+.time{
+	padding-top:10px;
+	text-align: right;
+	padding-right: 15px;
+	font-size:1.3em;
+	font-weight: bold;
+	color:#fff;
+}
+
+.olymp_name_txt{
+	font-weight: 700;
+	font-size: 1.5em;
+	padding-left:30px;
+	padding-top:0px;
+	line-height: 30px;
+	color:#fff;
+}
+
+.dont_have_acc{
+	position: relative;
+	top:78vh;
+	font-size:1.1em;
+	text-align: right;	
+	padding-right: 40px;
+	color:#fff;
+}
+
+.dont_have_acc a{
+	font-size:1.3em;
+	font-weight: bold;
+	color:#fff;
+}
+
+.dont_have_acc a:hover{
+	color:rgba(192,192,192,1);
+}
+
+.input_area{
+	flex:4;
+	margin-left:3%;
+	margin-top:8%;
+}
+
+.wel_txt{
+	font-size:2em;
+	font-weight:800;	
+}
+
+.olymp_txt{
+	font-size:4em;
+	font-weight: bold;
+	transform: rotateZ(270deg);
+	float: left;
+	margin-left:-130px;
+	margin-top:-34%;
+	color:#fff;
+}
+
+a{
+	text-decoration: none;
+}
+
+form a:hover{
+	text-decoration: underline;
+}
+
+.start_btn{
+	margin-top:80%;
+}
+
+.start_btn button{
+	padding-left:40px;
+	padding-right:40px;
+	border:1px solid #fff;
+	border-radius:40px;
+	height:50px;
+	background: rgba(255,255,255,0.2);
+	font-size:1.2em;
+	font-weight: bold;
+	color:#fff;
+}
+
+.start_btn button:hover{
+	opacity: 0.8;
+	cursor: pointer;
+}
+
+
+.rules_cont{
+	padding-right:120px;
+	text-align: justify;
+}
+
+.rules_cont li{
+	padding-top:20px;
+}
+
+.ques_num{
+	font-weight: bold;
+}
+
+.sub_btns{
+	margin-top:20%;
+}
+
+.sub_btns button{
+	padding-left:40px;
+	padding-right:40px;
+	border:1px solid #000;
+	border-radius:40px;
+	height:50px;
+	background: rgba(255,255,255,0.2);
+	font-size:1em;
+	font-weight: bold;
+	color:#000;
+}
+
+.sub_btns button:hover{
+	opacity:0.8;
+	cursor: pointer;
+}
+
+
+.time_elapsed{
+	margin-top:75%;
+	padding-right:20px;
+}
+
+.time_el_val{
+	font-size:3.5em;
+	font-weight: bold;
+	color:#fff;
+}
+
+.time_el_txt{
+	font-size:1.2em;
+	padding-right: 40px;
+	color:#fff;
+}

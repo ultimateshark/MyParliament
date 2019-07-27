@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Khula:400,700&display=swap');
+
+
+*{
+	font-family:'Khula',sans-serif;
+}
+.research{
+	font-size:2.0em;
+	font-weight: 800;
+}
+.theory{
+	font-size:1.3em;
+	text-align: justify;
+}
+.thirdbox{
+	font-size:1.7em;
+	font-weight: 700;
+	background:#206A8E;
+	padding-left:10px;
+	padding-top:5px;
+	padding-bottom:3px;
+}
+.highlights{
+	font-size: 2.0em;
+	font-weight: 700;
+	background:#206A8E;
+}
+.b1{
+	font-size: 1.7em;
+	font-weight: 700;
+	border:3px solid red;
+	background:white;
+}
+.b2{
+	font-size: 1.3em;
+	text-align: justify;
+	background:green;
+	color:white;
+
+}
+.block1{
+	font-size:1.3em;
+	text-align: justify;
+	border: 2px solid red; 
+}
+.block2{
+	font-size:1.3em;
+	text-align: justify;
+	border: 3px solid green; 
+}
+.block3{
+	font-size:1.3em;
+	text-align: justify;
+	border: 2px solid orange; 
+}
+.heading1{
+	text-align: center;
+	background:red;
+	color: white;
+	
+}
+.heading2{
+	text-align: center;
+	background:orange;
+	color: white;
+	
+}
+
+@media only screen and(max-width: 580px){
+
+	.row{
+		display: flex;
+		flex-direction: column;
+		flex-direction: row;
+	}
+}
+img{
+	border: 3px solid black;
+	border-radius: 200px;
+	
+
+}
+.images{
+	padding-left: 200px;
+	
+}

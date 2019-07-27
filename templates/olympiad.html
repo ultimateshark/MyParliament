@@ -1,0 +1,69 @@
+ {% extends 'navbar.html' %}
+
+{% block head %}
+	<title>My Parliament - Olympiads </title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="../static/css/courses.css">
+	<link rel="stylesheet" href="../static/css/coursesres.css">
+	<link rel="stylesheet" href="../static/css/simple-grid.css">
+
+{% endblock %}
+
+{% block body %}
+
+<div class="row course_bar">
+	<div class="col-2 courses_h">OLYMPIADS</div>
+	<div class="col-7"></div>
+	<div class="col-3 search_input">
+		<input type="text" placeholder="Search" name="search">
+		<button class="search_btn">Search</button>
+	</div>
+</div>
+
+
+<!-- course Bar ends -->
+<br>
+
+<div class="abt_courses">
+	<div class="abt_courses_wrap">
+		<div class="mp_courses_h">My Parliament <br> Olympiads</div>
+		<div class="mp_courses_txt">Lorem ipsum dolor sit Amet.Lorem ipsum dolor sit AmetLorem ipsum dolor sit AmetLorem ipsum dolor sit AmetLorem ipsum dolor sit AmetLorem ipsum dolor sit Amet</div>
+	</div>
+</div>
+
+<br><br>
+
+<!-- Enrolled Courses Ends -->
+<br><br>
+
+<div class="all_courses_sec">
+	<div class="all_courses_wrap">
+		<div class="row">
+			<div class="col-12 all_courses_h">ALL OLYMPIADS</div>
+		</div>
+
+		<div class="all_courses_cont">
+			<div class="row">
+				{% if olympiads %}
+				{% for olympiad in olympiads %}
+				<div class="col-2 col-5-sm all_course_box">
+					<img src="../static/img/course.jpg">
+					<div class="course_name_all">Web Development Course Web Development Course Web Development Course</div>
+					<div class="course_auth">By Random Person</div>
+				</div>
+				{% endfor %}
+				{% else %}
+				<h3 align="center">No Olympiads Found</h3>
+				{% endif %}
+
+		</div>
+
+	</div>
+</div>
+</div>
+
+		<div class="row"><div class="col-12 center "><button class="see_more_btn">See More</button></div></div>
+
+
+
+{% endblock %}

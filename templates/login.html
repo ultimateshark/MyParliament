@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Parliament - Login </title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="../static/css/login.css">
+	<link rel="stylesheet" href="../static/css/simple-grid.css">
+</head>
+<body>
+
+
+<div class="wrap">
+		<div class="left_area">
+				<div class="logo">
+					 MY <br> PARLIAMENT
+				</div>
+
+				<div class="dont_have_acc">
+					Don't Have an Account?<br>
+					<a href="/get/sign">CREATE NEW ACCOUNT</a>
+				</div>
+		</div>
+
+		<div class="input_area">
+			
+					<div class="col-12 wel_txt">
+						Welcome,<br>
+						<font style="color:#1F618A;">LOGIN</font> to continue
+					</div>
+				
+				<br><br>
+			
+				<form action="/login" method="POST">
+					<input type="email" placeholder="EMAIL ADDRESS"  name="email"> <br>
+					<input type="password" placeholder="PASSWORD" name="passwd"> <br><br>
+					<a href="#">Forgot Password?</a>  <br><br>
+					<button class="login_btn">LOGIN</button>
+					
+				</form>
+		</div>
+</div>
+
+
+
+
+</body>
+</html>

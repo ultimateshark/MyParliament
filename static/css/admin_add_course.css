@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Khula|Maven+Pro|Dosis|');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800&display=swap');
+
+
+
+*{
+	font-family: 'Montserrat', sans-serif;
+}
+
+
+
+nav{
+	position: fixed;
+	width:100%;
+	left:0;
+	height:80px;
+	top:0px;
+	z-index:11;
+	box-shadow: 0px  1px 10px  rgba(0,0,0,0.3);
+}
+
+
+
+
+
+.list{
+	margin-right:80px;
+	padding-top:10px;
+	float:right;
+	color:#000;
+	font-family: 'khula',sans-serif;	
+}
+
+
+.list a{
+	display: inline;
+	font-weight: bold;
+	font-size: 1.2em;
+	color:#000;
+	text-decoration: none;
+}
+
+nav ul li{
+	display: inline;
+	padding-left:30px;
+}
+
+
+
+
+.logo{
+	font-weight: 700;
+	font-size: 1.5em;
+	padding-left:30px;
+	padding-top:20px;
+	line-height: 20px;
+}
+
+.admin_txt{
+	font-size:0.6em;
+	color:red;
+	margin-left:-10px;
+}
+.up_course_h{
+		font-size:1.6em;
+		font-weight: bold;
+
+	}	
+
+form{
+	margin-left:3%;
+}
+
+form input{
+	width:25%;
+	padding-top:5px;
+	padding-bottom:5px;
+	margin-top:10px;
+	padding-left: 5px;
+}
+
+textarea{
+	width:25%;
+	margin-top:10px;
+	padding-left: 5px;
+	padding-top:5px;
+	padding-bottom:5px;
+	resize: none;
+	height: 200px;
+}
+
+
+form button{
+	width:25.6%;
+	height:55px;
+	border:none;
+	background: linear-gradient(35deg , #145792 , #23AEBE);
+	font-size:1.2em;
+	font-weight: bold;
+	color:#fff;
+	min-width:250px;
+}
+
+form button:hover{
+	opacity: 0.8;
+	cursor: pointer;
+}
+
+
+/*up_course.css*/
+
+.week{
+	font-size:1.5em;
+	font-weight: bold;
+}

@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Khula:400,700&display=swap');
+
+
+*{
+	font-family:'Khula',sans-serif;
+}
+
+.thirdbox{
+	font-size:2em;
+	font-weight: 800;
+}
+
+.june{
+	font-size: 1.5em;
+	font-weight: 700;
+	background:#206A8E;
+	padding-left:10px;
+	padding-top:5px;
+	padding-bottom:3px;
+	color:#fff;
+}
+
+.theory{
+	font-size:1.3em;
+	text-align: justify;
+	padding-top:20px;
+}
+
+.workshop_wrap{
+	margin-top:2px;
+}
+.row{display: flex;}
+
+@media only screen and(max-width: 580px){
+	.row{
+		display: flex;
+		flex-direction: column;
+		
+	}
+}

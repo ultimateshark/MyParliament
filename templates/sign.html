@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Parliament - Login </title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="../static/css/login.css">
+	<link rel="stylesheet" href="../static/css/simple-grid.css">
+</head>
+<body>
+
+
+<div class="wrap">
+		<div class="left_area">
+				<div class="logo">
+					 MY <br> PARLIAMENT
+				</div>
+
+				<div class="dont_have_acc">
+					Already have an account?<br>
+					<a href="/get/login">LOGIN NOW</a>
+				</div>
+		</div>
+
+		<div class="input_area">
+			
+					<div class="col-12 wel_txt">
+						Welcome,<br>
+						<font style="color:#1F618A;">CREATE</font> New Account
+					</div>
+				
+				<br><br>
+			
+				<form action="/signup" method="POST">
+					<input type="text" placeholder="FULL NAME"  name="name"> <br>
+					<input type="email" placeholder="EMAIL ADDRESS"  name="email"> <br>
+					<input type="password" placeholder="PASSWORD" name="passwd"> <br><br>
+					By Creating Account you are agreeing to <a href="#">Terms And Conditions</a>  <br><br>	
+					<button class="login_btn">CREATE ACCOUNT</button>
+
+				</form>
+		</div>
+</div>
+
+
+</body>
+</html>

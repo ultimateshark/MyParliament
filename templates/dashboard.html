@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard | My Parliament </title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="../static/css/dashboard.css">
+	<link rel="stylesheet" href="../static/css/simple-grid.css">
+</head>
+<body>
+
+
+
+<nav>
+	<div class="logo">My Parliament</div>
+	<ul class="list">
+		<li class="i"><a href="#">{{name|upper}}</a></li>
+		<li class="i"><a href="/change-password">CHANGE PASSWORD</a></li>
+		<li><a href="/logout" class="login_btn">LOGOUT</a></li>
+	</ul>	
+</nav>
+
+<div class="wrap">
+		<div class="left_area">
+				<div class="dash_opts_wrap">
+					<a href="/dashboard/my-profile" target="loadframe"><div>My Profile</div></a>
+					<a href="/dashboard/my-course" target="loadframe"><div>My Courses</div></a>
+					<a href="/dashboard/my-olympiads" target="loadframe"><div>My Olympiads</div></a>
+					<a href="/dashboard/my-event" target="loadframe"><div>My Events</div></a>
+				</div>
+
+				
+		</div>
+
+		<div class="input_area">
+			<iframe src="/dashboard/my-course" name="loadframe"></iframe>
+		</div>
+</div>
+
+
+
+
+</body>
+</html>

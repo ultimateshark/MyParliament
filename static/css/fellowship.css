@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css?family=Khula:400,700&display=swap');
+
+
+*{
+	font-family:'Khula',sans-serif;
+}
+
+.mpf_h{
+	font-size:2em;
+	font-weight: 700;
+}
+
+.mpf_cont{
+	font-size:1.3em;
+	text-align: justify;
+}
+
+.prog_off_wrap{
+	display: flex;
+	flex-direction: row;
+}
+
+
+.prog_off .time_h{
+	text-align: center;
+	background:#206A8E; 
+	color:#fff;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+.full_time{
+	flex:1;
+	text-align: justify;
+	font-size:1.4em;
+	padding-left:25px;
+	padding-right:10px;
+}
+
+.full_time_wrap{
+	border:1px solid #707070;
+	padding-bottom: 37px;
+}
+
+
+.full_time_cont{
+	padding-top:20px;
+	padding-left:20px;
+	padding-right:20px;
+}
+
+.part_time{
+	flex:1;
+	text-align: justify;
+	padding-left:10px;
+	padding-right:25px;
+	font-size:1.4em;
+}
+
+
+.part_time_cont{
+	padding-top:20px;
+	padding-left:20px;
+	padding-right:20px;
+}
+
+
+.part_time_wrap{
+	border:1px solid #707070;
+}
+
+.hwa_h{
+	font-size: 2em;
+	font-weight:700;
+}
+
+.ec_h{
+	font-size: 1.3em;
+	font-weight: 700;
+}
+
+.how_to_apply ul{
+	font-size:1.3em;
+	text-align: justify;
+}
+
+.how_to_apply ul li{
+	padding-top:15px;
+}
+
+.app_proc_h{
+	font-size: 2em;
+	font-weight:700;
+}
+
+.app_proc .steps{
+	font-size:1.5em;
+	text-align: center;
+	font-weight: bold;
+}
+
+.faq{
+	font-size: 1.4em;
+}
+
+@media only screen and (max-width:580px){
+	.prog_off_wrap{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.full_time{
+		padding-left:0px;
+		padding-right:0px;
+	}
+
+	.part_time{	
+		padding-left:0px;
+		padding-right:0px;
+	}
+
+	.how_to_apply{
+		padding-right:30px;
+	}
+
+}

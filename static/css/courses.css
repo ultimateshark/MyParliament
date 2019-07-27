@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Khula|Maven+Pro|Dosis');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+body{
+	
+}
+
+*{
+	font-family: 'Khula',sans-serif;
+}
+
+nav{
+	position: fixed;
+	width:100%;
+	left:0;
+	height:80px;
+	top:0px;
+	z-index:11;
+}
+
+.logo{
+	font-family: 'Josefin Sans',sans-serif;
+	font-size:2em;
+	position: absolute;
+	left:40px;
+	top:-20px;
+	padding-top:40px;
+	padding-left:10px;
+	padding-right:10px;
+}
+
+
+
+.list{
+	margin-right:80px;
+	padding-top:0px;
+	float:right;
+	color:#000;
+	font-family: 'khula',sans-serif;	
+}
+
+
+.list a{
+	display: inline;
+	font-weight: bold;
+	font-size: 1.4em;
+	color:#000;
+	text-decoration: none;
+}
+
+nav ul li{
+	display: inline;
+	padding-left:30px;
+}
+
+/*Nav Bar Ends */
+
+.course_bar{
+	margin-top:80px;
+}
+
+.courses_h{
+	font-size:1.5em;
+	font-family: 'Josefin Sans',sans-serif;
+	font-weight: bold;
+}
+
+.search_input input{
+	height: 30px;
+}
+
+.search_input button{
+	height:36px;
+	border:none;
+	margin-left:-5px;
+	width:80px;
+	background: #2068AE;
+	color:#fff;
+}
+
+.abt_courses{
+	background:linear-gradient(135deg , #145792 , #23AEBE);
+}
+.abt_courses_wrap{
+	display: flex;
+	flex-direction: row;
+	padding:60px 70px 60px 50px;
+}
+
+.mp_courses_h{
+	flex:3;
+	font-size:1.6em;
+	font-weight: bold;
+	color:#fff;
+	font-family: 'Josefin Sans',sans-serif;
+}
+
+.mp_courses_txt{
+	flex:3;
+	text-align: justify;
+	padding-right: 100px;
+	padding-left: 100px;
+	color:#fff;
+	font-size:1.3em;
+}
+
+.enr_courses_h{
+	font-size:1.5em;
+	font-weight: bold;
+	font-family:'Josefin Sans',sans-serif;
+}
+
+
+.enr_courses_sec{
+	width:95%;
+	overflow:  auto;
+}
+
+
+.enr_courses_box_wrap{
+	display: flex;
+	flex-direction: row;
+	padding-left:20px;
+	padding-right:80px;
+	width:70%;
+}
+
+.enr_course_box{	
+	box-shadow:0px 4px 10px  rgba(0,0,0,0.2);
+	margin-left:10px;
+	margin-top:10px;
+}
+
+.enr_course_box img{
+	width: 100%;
+}
+
+.course_name{
+	font-size:1.3em;
+	padding-left:5px;
+	display: block;
+ 	width: 300px;
+  	overflow: hidden;
+  	white-space: nowrap;
+  	text-overflow: ellipsis;
+}
+
+.course_auth{
+	padding-left: 5px;
+}
+
+.all_courses_sec{
+	height:440px;
+	overflow:hidden;
+	width:95%;
+	margin-left:2%;
+}
+
+
+.all_courses_h{
+	font-size:1.5em;
+	font-weight: bold;
+	font-family:'Josefin Sans',sans-serif;
+}
+
+ .all_course_box{
+	box-shadow:0px 4px 10px  rgba(0,0,0,0.2);
+}
+
+
+.all_courses_cont{
+	width: 100%;	
+}
+.all_courses_cont img{
+	width:100%;
+}
+
+
+
+
+.course_name_all{
+	font-size:1.2em;
+	padding-left:5px;
+	display: block;
+ 	width: 180px;
+  	overflow: hidden;
+  	white-space: nowrap;
+  	text-overflow: ellipsis;
+}
+
+.see_more_btn{
+	font-size:1.1em;
+	padding-left:20px;
+	padding-right:20px;
+	background-color:rgba(192,192,192,0.1);
+	border:1px solid #206A8E;
+	border-radius:40px;
+}

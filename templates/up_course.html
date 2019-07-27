@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard | My Parliament </title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="../static/css/admin_add_course.css">
+	<link rel="stylesheet" href="../static/css/simple-grid.css">
+
+
+
+</head>
+<body>
+
+
+<div class="logo">
+	MY <br> PARLIAMENT <sub class="admin_txt">admin</sub>
+</div>
+
+<nav>
+	<ul class="list">
+		<li class="i"><a href="#">Profile</a></li>
+		<li><a href="#">LOGOUT</a></li>
+	</ul>	
+</nav>
+
+<br><br>
+
+<div class="row">
+	<div class="col-12 week">Lecture</div>
+</div>
+
+<br>
+
+<form action="/add-week/{{course_id}}" method="POST">
+	<input type="text" name="title" placeholder="COURSE TITLE"><br>
+	<textarea placeholder="TITLE DESCRIPTION" name="description"></textarea> <br>
+	<input type="text" placeholder="Video Link" name="link" > <br><br>
+	<button>ADD WEEK</button><br><br>
+
+<a href="/add-week"><button type="button">ADD WEEK</button></a><br><br>
+
+<a href="/dashboard"><button type="button">FINISH</button></a>
+
+</form>
+
+</body>
+</html>

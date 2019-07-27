@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Khula|Maven+Pro|Dosis|');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800&display=swap');
+
+
+
+*{
+	font-family: 'Montserrat', sans-serif;
+}
+.wrap{
+	display: flex;
+}
+
+
+.left_area{
+	flex:3;
+	background: linear-gradient(135deg , #145792 , #23AEBE);
+	height: 100vh;
+}
+
+
+.logo{
+	font-weight: 700;
+	font-size: 2em;
+	padding-left:30px;
+	padding-top:20px;
+	line-height: 30px;
+	color:#fff;
+}
+
+.dont_have_acc{
+	position: relative;
+	top:78vh;
+	font-size:1.1em;
+	text-align: right;	
+	padding-right: 40px;
+	color:#fff;
+}
+
+.dont_have_acc a{
+	font-size:1.3em;
+	font-weight: bold;
+	color:#fff;
+}
+
+.dont_have_acc a:hover{
+	color:rgba(192,192,192,1);
+}
+
+.input_area{
+	flex:4;
+	margin-left:8%;
+	margin-top:10%;
+}
+
+.wel_txt{
+	font-size:2em;
+	font-weight:800;	
+}
+
+form input{
+	width:57%	;
+	height:55px;
+	border:1.1px solid rgba(112,112,112,0.4);
+	font-size: 1em;
+	padding-left:10px;
+	min-width:250px;
+
+}
+
+a{
+	text-decoration: none;
+}
+
+form a:hover{
+	text-decoration: underline;
+}
+
+input[name^="pass"]{
+	margin-top:-1px;
+}
+input[name^="name"]{
+	border-bottom: none;
+}
+
+
+::placeholder {
+	color:rgba(112,112,112,0.5);
+}
+
+::-ms-input-placeholder{ 
+	color:rgba(112,112,112,0.5);
+}
+
+.login_btn{
+	width:58.5%;
+	height:55px;
+	border:none;
+	background: linear-gradient(35deg , #145792 , #23AEBE);
+	font-size:1.2em;
+	font-weight: bold;
+	color:#fff;
+	min-width:250px;
+}
+
+.login_btn:hover{
+	opacity: 0.8;
+	cursor: pointer;
+}
+
+
+
+

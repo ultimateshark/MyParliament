@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Parliament - Home </title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="../static/css/courses.css">
+	<link rel="stylesheet" href="../static/css/coursesres.css">
+	<link rel="stylesheet" href="../static/css/simple-grid.css">
+
+</head>
+<body>
+<!-- course Bar ends -->
+<br>
+
+<div class="abt_courses">
+	<div class="abt_courses_wrap">
+		<div class="mp_courses_h">My Parliament <br> Courses</div>
+		<div class="mp_courses_txt">Lorem ipsum dolor sit Amet.Lorem ipsum dolor sit AmetLorem ipsum dolor sit AmetLorem ipsum dolor sit AmetLorem ipsum dolor sit AmetLorem ipsum dolor sit Amet</div>
+	</div>
+</div>
+
+<br><br>
+
+{% if enrolled_course%}
+
+<div class="enr_courses_sec">
+	<div class="enr_courses_wrap">
+
+		<div class="row">
+			<div class="col-12 enr_courses_h">ENROLLED COURSES</div>
+		</div>
+
+
+
+		<div class="enr_courses_box_wrap">
+
+			{% for course in enrolled_course %}
+			<a href="/course-details/{{course.courses.course_id}}" style="text-decoration: none;" target="_parent">
+			<div class=" enr_course_box">
+				<img src="../static/img/course.jpg">
+				<div class="course_name">{{course.courses.name}}</div> 
+				<div class="course_auth">By : {{course.courses.author}}</div>
+			</div>
+			</a>
+			{% endfor %}
+		</div>
+
+	</div>
+</div>
+{% endif %}
+
+<!-- Enrolled Courses Ends -->
+<br><br>
+
+<div class="all_courses_sec">
+	<div class="all_courses_wrap">
+		<div class="row">
+			<div class="col-12 all_courses_h">ALL COURSES</div>
+		</div>
+
+		<div class="all_courses_cont">
+			<div class="row">
+				{% if courses %}
+				{% for course in courses %}
+			<a href="/course-details/{{course.course_id}}" style="text-decoration: none;"  target="_parent">
+
+				<div class="col-2 col-5-sm all_course_box">
+					<img src="../static/img/course.jpg">
+					<div class="course_name_all">{{course.name}}</div>
+					<div class="course_auth">By : {{course.author}}</div>
+				</div>
+			</a>
+				{% endfor %}
+				{% else %}
+				<h3 align="center">No CourseFound</h3>
+				{% endif %}
+				
+		</div>
+
+	</div>
+</div>
+</div>
+
+		<div class="row"><div class="col-12 center "><a href="/courses-all" target="_parent"><button class="see_more_btn">See More</button></a></div></div>
+
+
+
+		
+
+</body>
+</html>

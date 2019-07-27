@@ -1,0 +1,57 @@
+@media only screen and (max-width:980px){
+	.course_name{
+		width:150px;
+	}
+}
+
+
+@media only screen and (max-width:750px){
+	.all_course_box{
+		margin-left:0px;
+	}
+}
+
+@media only screen and (max-width:600px){
+	.search_input{
+		width:100px;
+	}
+
+
+	.abt_courses_wrap{
+		display: flex;
+		flex-direction: column;
+		padding-left:10px;
+		padding-right: 10px;
+	}
+
+	.mp_courses_h br{
+		display: none;
+	}
+
+	.mp_courses_txt{
+		padding-right:30px;
+		padding-left:10px;
+		padding-top:20px;
+	}
+
+	.enr_courses_box_wrap{
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.enr_courses_box_wrap ul li{
+		display: block;
+	}
+
+	.enr_courses_box_wrap img{
+		width:100%;
+	}
+
+	.course_name{
+		width:200px;
+		font-size:1em;
+	}
+
+	
+}

@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Khula:400,700&display=swap');
+
+
+*{
+	font-family:'Khula',sans-serif;
+}
+
+
+.workshop_wrap{
+	margin-top:38px;
+}
+
+.policy{
+	font-size:2em;
+	font-weight: 800;
+}
+
+.theory{
+	font-size:1.3em;
+	text-align: justify;
+	padding-top:10px;
+}
+
+.june , .august , .delhi , .ah , .bombay{
+	font-size: 1.5em;
+	font-weight: 700;
+	background:#206A8E;
+	padding-left:10px;
+	padding-top:5px;
+	padding-bottom:3px;
+	color:#fff;
+}
+

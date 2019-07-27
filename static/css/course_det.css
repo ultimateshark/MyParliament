@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Khula|Maven+Pro|Dosis');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+body{
+	height: auto;
+	overflow: auto;
+}
+
+*{
+	font-family: 'Khula',sans-serif;
+}
+
+
+nav{
+	position: fixed;
+	width:100%;
+	left:0;
+	height:80px;
+	top:0px;
+	z-index:11;
+}
+
+.logo{
+	font-family: 'Josefin Sans',sans-serif;
+	font-size:2em;
+	position: absolute;
+	left:40px;
+	top:-20px;
+	padding-top:40px;
+	padding-left:10px;
+	padding-right:10px;
+}
+
+
+
+.list{
+	margin-right:80px;
+	padding-top:0px;
+	float:right;
+	color:#000;
+	font-family: 'khula',sans-serif;	
+}
+
+
+.list a{
+	display: inline;
+	font-weight: bold;
+	font-size: 1.4em;
+	color:#000;
+	text-decoration: none;
+}
+
+nav ul li{
+	display: inline;
+	padding-left:30px;
+}
+
+/*Nav Bar Ends */
+
+
+
+iframe{
+	padding-top:40px;
+	width:100%;
+}
+
+.course_bar{
+	margin-top:80px;
+}
+
+.courses_h{
+	font-size:1.5em;
+	font-family: 'Josefin Sans',sans-serif;
+	font-weight: bold;
+}
+
+.search_input input{
+	height: 30px;
+}
+
+.search_input button{
+	height:36px;
+	border:none;
+	margin-left:-5px;
+	width:80px;
+	background: #2068AE;
+	color:#fff;
+}
+
+
+.course_img{
+	height:350px;
+	width:100%;
+	overflow:hidden;
+}
+
+.course_det_wrap{
+	display: flex;
+	flex-direction: row;
+}
+
+.contents_sec{
+	flex:1;
+	border:1px solid #eee;
+
+}
+
+.content_sec_wrap{
+
+}
+
+.course_det_right_sec{
+	flex:3;
+	height:inherit;
+}
+
+
+.course_name{
+	font-weight: bold;
+	font-size:1.8em;
+}
+
+.course_auth{
+	font-size:1.2em;
+}
+
+.course_det_sec .course_index{
+	padding-left:60px;
+	padding-top:20px;
+}
+
+.course_index .week{
+	list-style-type: none;
+	font-weight: bold;
+	font-size:1.4em;
+}
+
+.course_index>li{
+	list-style-type: none;
+}
+
+.enroll_btn{
+	border:2px solid #206A8E;
+	font-size:1.2em;
+	padding-left:20px;
+	padding-right:20px;
+	font-weight: bold;
+	background:transparent;
+	padding-top:4px;
+}
+
+.abt_course_h{
+	font-size:1.6em;
+	font-weight: bold;
+}
+
+.abt_course_txt{
+	font-size:1.2em;
+	text-align: justify;
+	padding-right:10px;
+	padding-bottom:5px;
+}
+
+.details_h,.abt_tut_h{
+	font-size:1.4em;
+	font-weight: bold;
+}
+
+.tut_det img{
+	width:30%;
+}
+
+.det_txt , .tut_txt{
+	font-size:1.2em;
+}

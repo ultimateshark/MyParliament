@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Khula|Maven+Pro|Dosis|');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800&display=swap');
+
+
+
+*{
+	font-family: 'Khula', sans-serif;
+}
+body{
+	overflow: hidden;
+}
+
+nav{
+	position: fixed;
+	width:100%;
+	left:0;
+	height:80px;
+	top:0px;
+	z-index:11;
+}
+
+.logo{
+	font-family: 'Josefin Sans',sans-serif;
+	font-size:1.7em;
+	position: absolute;
+	left:40px;
+	top:-20px;
+	padding-top:40px;
+	padding-left:10px;
+	padding-right:10px;
+	color:#fff;
+}
+
+
+
+.list{
+	margin-right:80px;
+	padding-top:0px;
+	float:right;
+	color:#000;
+	font-family: 'khula',sans-serif;	
+}
+
+
+.list a{
+	display: inline;
+	font-weight: bold;
+	font-size: 1.4em;
+	color:#000;
+	text-decoration: none;
+}
+
+nav ul li{
+	display: inline;
+	padding-left:30px;
+}
+
+
+/*Nav bar ends*/
+
+.wrap{
+	display: flex;
+}
+
+
+.left_area{
+	flex:1;
+	background: linear-gradient(135deg , #145792 , #23AEBE);
+	height: 100vh;
+}
+
+
+.input_area{
+	flex:4;
+	
+	margin-top:75px;
+}
+
+.input_area iframe{
+	width:100%;
+	height:100%;
+	border:none;
+}
+
+
+
+a{
+	text-decoration: none;
+}
+
+
+.dash_opts_wrap{
+	margin-top:37%;
+}
+
+.dash_opts_wrap div{
+	list-style-type: none;
+	font-size:1.3em;
+	margin-top:0px;
+	padding-top:15px;
+	padding-bottom:15px;
+	background:rgba(255,255,255,0.7);
+	text-align: center;
+}

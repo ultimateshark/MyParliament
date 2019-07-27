@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Khula:400,700&display=swap');
+
+
+
+
+
+*{
+	font-family:'Khula',sans-serif;
+}
+
+.sp_h{
+	font-size:2em;
+	font-weight: 700;
+}
+
+
+
+.por_h{
+	font-size:1.3em;
+	text-align: justify;
+}
+
+.kr_h{
+	font-size: 1.3em;
+	font-weight: 700;
+}
+
+.rm_h{
+	font-size: 1.3em;
+	font-weight: 700;
+}
+
+ul{
+	font-size:1.3em;
+	text-align: justify;
+}
+
+ul li{
+	padding-top:15px;
+}
+
+
+.qs_h{
+	font-size: 1.3em;
+	font-weight: 700;
+}
+
+.lt_h{
+	font-size: 1.3em;
+	font-weight: 700;
+}
+
+.eo_h{
+	font-size: 1.3em;
+	font-weight: 700;
+}
+
+
+
+

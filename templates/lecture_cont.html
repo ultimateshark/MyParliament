@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="../static/css/course_det.css">
+	<link rel="stylesheet" href="../static/css/course_det_res.css">
+	<link rel="stylesheet" href="../static/css/simple-grid.css">
+	<link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/plyr.css" />
+</head>
+
+<style>
+	::-webkit-scrollbar{
+		width:10px;
+	}	
+	::-webkit-scrollbar-thumb {
+  		background:rgba(32, 106, 134,0.8); 
+  		border-radius: 20px;
+	}
+
+</style>
+
+
+
+<body>
+
+<div class="row">
+					<div class="col-8">
+						<div class="course_name">{{lecture.title}}</div>
+							<!-- <div class="course_auth">By </div> -->
+					</div>
+					
+					<div class="col-3 right">
+						<!-- <a href="/enroll-now/"><button class="enroll_btn">ENROLL NOW</button></a> -->
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-12 abt_course_h">About This Course</div>
+				</div>
+
+				<div class="row">
+					<div class="col-10 abt_course_txt ">
+						{{lecture.description}}
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-10">
+						<div class="plyr__video-embed" id="player" >
+    						<iframe
+						        src="https://www.youtube.com/embed/{{lecture.link}}?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+						        allowfullscreen
+						        allowtransparency
+						        allow="autoplay">
+						    </iframe>
+						</div>
+					</div>
+				</div>
+				<br><br>
+
+				<!-- <div class="row">
+					<div class="col-7">
+						<div class="details_h">Details</div>
+						<div class="det_txt">
+							 Weeks<br>
+							Rs. <br>
+							Certificate
+						</div>
+					</div>
+					<div class="col-4 tut_det">
+						<div class="abt_tut_h">About the Tutor</div>
+						<div class="tut_det_txt ">
+							<img src="../static/img/tut.png"> 
+
+							<div class="tut_txt">
+							<br>
+							Courses
+						</div>
+						</div>
+					</div>
+				</div>
+ -->
+</body>
+</html>

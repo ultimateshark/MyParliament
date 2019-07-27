@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="../static/css/home.css">
+	<link rel="stylesheet" href="../static/css/homeres.css">
+	<link rel="stylesheet" href="../static/css/simple-grid.css">
+	<link rel="stylesheet" href="../static/css/navbar.css">
+	<link rel="stylesheet" href="../static/css/footer.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	
+	{% block head %}{% endblock %}
+
+</head>
+<body>
+	<nav>
+		<div class="logo" style="color: black;">My Parliament</div>
+		
+		<ul class="list">
+			<li class="i"><a href="/courses-all">Courses</a></li>
+			<li class="i"><a href="/olympiad-all">Olympiad</a></li>
+			<li class="i"><a href="/event-all">Events</a></li>
+			<li>
+				<div class="dropdown">
+					<a href="{{nav_value[1]}}" class="login_btn">{{nav_value[0]}}</a>
+					
+				</div>
+			</li>
+		</ul>
+
+	</nav>
+
+	{% block body %}{% endblock %}
+<footer>
+	<div class="footer_wrap">
+	
+		<div class="footer_left">
+			<div class="footer_logo">My <br> Parliament</div>
+		</div>
+
+		<div class="footer_list">
+			<div class="footer_list_wrap">
+
+				<ul class="list_one">
+					<li><a href="/get/fellowship">Fellowship</a></li>
+					<li>Simulations</li>
+					<li>Initiatives</li>
+					<li>Get Involved</li>
+					<li>Work With Us</li>
+				</ul>
+
+				<ul class="list_two">
+					<li>About Us</li>
+					<li>Contact Us</li>
+					<li>Documents</li>
+				</ul>
+
+			</div>
+		</div>
+
+	</div>
+	<div class="row">
+		<div class="col-12">
+			<img src="">
+			<img src="">
+			<img src="">
+		</div>
+	</div>
+</footer>
+
+<script>
+
+
+
+
+$(window).scroll(function(){
+	var scroll =$(window).scrollTop();
+	
+	if(scroll>120){
+		$("nav").addClass("navScroll");
+		
+	}else{
+		$("nav").removeClass("navScroll");
+		
+	}
+});
+
+</script>
+</body>
+<script type="text/javascript">
+  function iframeLoaded() {
+      var iFrameID = document.getElementById('loadframe');
+      if(iFrameID) {
+            iFrameID.height = iFrameID.contentWindow.document.body.scrollHeight+100 + "px";
+      }   
+  }
+</script>
+</html>	
+	

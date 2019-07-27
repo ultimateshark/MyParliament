@@ -1,0 +1,13 @@
+@media only screen and (max-width: 600px){
+	.course_img{
+		height: 250px;
+	}
+
+	.tut_det{
+		text-align: left;
+	}
+	/*.course_det_wrap{
+		display: flex;
+		flex-direction:column;
+	}*/
+}

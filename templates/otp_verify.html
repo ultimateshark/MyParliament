@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Parliament - Login </title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="../static/css/login.css">
+	<link rel="stylesheet" href="../static/css/simple-grid.css">
+</head>
+<body>
+
+
+<div class="wrap">
+		<div class="left_area">
+				<div class="logo">
+					 MY <br> PARLIAMENT
+				</div>
+
+				<div class="dont_have_acc">
+					Already have an account?<br>
+					<a href="/get/login">LOGIN NOW</a>
+				</div>
+		</div>
+
+		<div class="input_area">
+			
+					<div class="col-12 wel_txt">
+						Welcome,<br>
+						<font style="color:#1F618A;">VERIFY</font> Your Account
+					</div>
+				
+				<br><br>
+			
+				<form action="/verify/{{uid}}" method="POST">
+					<input type="number" placeholder="ENTER OTP"  name="otp"> <br>
+					<button class="login_btn">CREATE ACCOUNT</button>
+
+				</form>
+		</div>
+</div>
+
+
+</body>
+</html>

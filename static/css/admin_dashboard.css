@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Khula|Maven+Pro|Dosis|');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800&display=swap');
+
+
+
+*{
+	font-family: 'Montserrat', sans-serif;
+}
+
+
+
+nav{
+	position: fixed;
+	width:100%;
+	left:0;
+	height:80px;
+	top:0px;
+	z-index:11;
+}
+
+
+
+
+
+.list{
+	margin-right:80px;
+	padding-top:10px;
+	float:right;
+	color:#000;
+	font-family: 'khula',sans-serif;	
+}
+
+
+.list a{
+	display: inline;
+	font-weight: bold;
+	font-size: 1.2em;
+	color:#000;
+	text-decoration: none;
+}
+
+nav ul li{
+	display: inline;
+	padding-left:30px;
+}
+
+
+
+
+.logo{
+	font-weight: 700;
+	font-size: 1.5em;
+	padding-left:30px;
+	padding-top:20px;
+	line-height: 20px;
+}
+
+.admin_txt{
+	font-size:0.6em;
+	color:red;
+	margin-left:-10px;
+}
+
+.create_opts{
+	padding-top:30px;
+	padding-left:20%;
+	display: flex;
+	flex-direction: row;
+	width:80%;
+}
+
+.create_opts div{
+	flex:1;
+	background:rgba(238, 238, 238,0.5);
+	padding-top:30px;
+	padding-right:30px;
+	padding-left:30px;
+	padding-bottom:30px;
+	margin-left:10px;
+	margin-top:10px;
+	text-align: center;
+	border:1px solid #206A8E;
+	color:#000;
+	border-radius:10px;
+	font-weight: bold;
+}
+
+.create_opts div:hover{
+	background:#206A8E;
+	color:#fff;
+	transition: 0.3s ease-all;
+}
+
+a{
+	text-decoration: none;
+}
+
+.prev_up_h{
+	font-size:1.5em;
+	font-family: 'Josefin Sans',sans-serif;
+	font-weight: bold;
+}
+
+.up_courses_sec , .up_olymp_sec , .up_events_sec{
+	width:95%;
+	overflow:  auto;
+	padding-bottom:10px;
+}
+
+.up_courses_h{
+	font-weight:2em;
+	font-weight: bold;
+	padding-left:5px; 
+}
+
+
+.up_courses_box_wrap{
+	display: flex;
+	flex-direction: row;
+	padding-left:20px;
+	padding-right:80px;
+	width:70%;
+}
+
+.up_course_box{	
+	box-shadow:0px 4px 10px  rgba(0,0,0,0.2);
+	margin-left:10px;
+	margin-top:10px;
+	width:200px;
+}
+
+.up_course_box img{
+	width: 100%;
+}
+
+.course_name{
+	font-size:1em;
+	padding-left:5px;
+	display: block;
+ 	width: 150px;
+  	overflow: hidden;
+  	white-space: nowrap;
+  	text-overflow: ellipsis;
+}
+
+.course_auth{
+	padding-left: 5px;
+}
+
+.all_courses_sec{
+	height:440px;
+	overflow:hidden;
+	width:95%;
+	margin-left:2%;
+}
+
+
+.all_courses_h{
+	font-size:1.5em;
+	font-weight: bold;
+	font-family:'Josefin Sans',sans-serif;
+}
+
+ .all_course_box{
+	box-shadow:0px 4px 10px  rgba(0,0,0,0.2);
+}
+
+
+
+@media only screen and (max-width: 600px){
+	.create_opts{
+		display: flex;
+		flex-direction: column;
+		padding-left:30px;
+	}
+}

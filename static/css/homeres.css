@@ -1,0 +1,22 @@
+@media only screen and (max-width: 800px){
+		.box_wrap{
+			display: flex;
+			justify-content: space-between;
+			flex-direction: column;
+		}
+		.mission{
+			flex:1;
+		}
+
+		.who{
+			flex:1;
+		}
+
+		.m_h{
+			display: none;
+		}
+
+		.partners_sec_wrap{
+			flex-direction: column;
+		}
+}
