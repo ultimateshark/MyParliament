@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Payment | My Parliament </title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="../static/css/admin_add_course.css">
+	<link rel="stylesheet" href="../static/css/simple-grid.css">
+	<link rel="stylesheet" href="../static/css/simple-grid.css">
+</head>
+<body>
+
+<br>
+
+<div class="row">
+	<div class="col-12 up_course_h" align="center">UPLOAD PAYMENT PROOF</div>
+</div>
+<div class="row" >
+	<div class="col-12" align="center">
+<form action="/complete-payment/{{course}}" method="POST" enctype=multipart/form-data >
+	<input type="file" name="proof" placeholder="Upload PAYMENT PROOF" align="center"><br>
+	<button >Upload Details</button>	
+</form>
+</div>
+</div>
+
+</body>
+</html>
+	
+
+

@@ -9,6 +9,7 @@ class Registered_Courses(db.Model):
     course_id=db.Column(db.Integer,db.ForeignKey("courses.course_id"))
     progress=db.Column(db.Integer,db.ForeignKey("week.week_id"))
     courses=db.relationship("Courses",backref=db.backref('subscribers'))
+    payment_done=db.Column(db.Boolean,default=0)
 
 class Registered_Events(db.Model):                    
     __tablename__="registered_events"
@@ -17,6 +18,7 @@ class Registered_Events(db.Model):
     event_id=db.Column(db.Integer,db.ForeignKey("event_details.event_id"))
     selected=db.Column(db.Boolean,nullable=True)
     events=db.relationship("Event_details",backref=db.backref('subscribers'))
+    payment_done=db.Column(db.Boolean,default=0)
 
 class Registered_Olympiads(db.Model):                 
     __tablename__="registered_olympiads"
@@ -26,6 +28,8 @@ class Registered_Olympiads(db.Model):
     answers=db.Column(db.String(6000),nullable=True)
     final_score=db.Column(db.Integer,nullable=True)
     olympiads=db.relationship("Olympiad_details",backref=db.backref('subscribers'))
+    payment_done=db.Column(db.Boolean,default=0)
+
 
 class Solved_Assignments(db.Model):
     __tablename__="solved_assignments"

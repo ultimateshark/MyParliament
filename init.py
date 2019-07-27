@@ -112,19 +112,20 @@ def All_Olympiads():
 @app.route("/add-course-page")
 @login_required
 def get_admin_add_course():
-	return render_template("admin_add_course.html")
+	courses=Courses.query.all()
+	return render_template("admin_add_course.html",courses=courses)
 
-@app.route("/add-week-page/<int:course_id>")
+
+@app.route("/add-lecture-page",methods=["GET","POST"])
 @login_required
-def add_week_page(course_id):
-	return render_template("up_course.html",course_id=course_id)
-
-
-@app.route("/add-lecture-page/<int:course_id>")
-@login_required
-def add_lecture_page(course_id):
-	course=Courses.query.filter_by(course_id=course_id).first()
-	return render_template("add_lecture.html",course=course)
+def add_lecture_page():
+	if request.method=="POST":
+		course_id=request.form["course_id"]
+		course=Courses.query.filter_by(course_id=course_id).first()
+		return render_template("add_lecture.html",course=course)
+	else:
+		flash("Method Not Allowed")
+		return redirect("/")
 
 
 
@@ -142,18 +143,20 @@ def Add_Course():
 			new_course=Courses(name=name,author=author,duration=duration,fees=fees,demo_link=demolink,description=description)
 			db.session.add(new_course)
 			db.session.commit()
-			return redirect(url_for("add_week_page",course_id=new_course.course_id))	
+			return redirect(url_for("get_admin_add_course"))	
 	except Exception as e:
 		return redirect("/")
 
 
-@app.route("/add-week/<int:course_id>",methods=["GET","POST"])
+@app.route("/add-week",methods=["GET","POST"])
 @login_required
-def Add_Week(course_id):
+def Add_Week():
 	try:
 		if request.method=="POST":
 			title=request.form["title"]
+			course_id=request.form["course_id"]
 			link=request.form["link"]
+			link=link.split("/")[-1]
 			description=request.form["description"]
 			cour=Courses.query.filter_by(course_id=course_id).first()
 			new_week=Week()
@@ -162,7 +165,7 @@ def Add_Week(course_id):
 			lecture=Lecture_details(title=title,link=link,description=description)
 			new_week.lectures.append(lecture)
 			db.session.commit()
-			return redirect("/add-week-page/"+str(course_id))	
+			return redirect("/add-course-page")	
 	except Exception as e:
 		return redirect("/")
 
@@ -181,11 +184,23 @@ def Add_Lecture(course_id):
 			lecture=Lecture_details(title=title,link=link,description=description)
 			week.lectures.append(lecture)
 			db.session.commit()
-			return redirect("/add-lecture-page/"+str(course_id))
+			return redirect("/add-course-page")
 	except Exception as e:
 		return redirect("/")
 
-
+@app.route("/pay-now/<int:course_id>")
+def Pay_now(course_id):
+	return render_template("payment.html",course=course_id)
+	
+@app.route("/complete-payment/<int:course_id>",methods=["GET","POST"])
+def Complete_payment(course_id):
+	if request.method=="POST":
+		file=request.files["proof"]
+		flash("Please Wait for verification!!!")
+		return redirect("/course-content/"+str(course_id))
+	else:
+		flash("Something Went Wrong")
+		return redirect("/course-content/"+str(course_id))
 
 	
 @app.route("/dashboard")
@@ -215,21 +230,30 @@ def Course_Enrollment(course_id):
 			return redirect("/course-content/"+str(course_id))
 		else:
 			flash("Please Login!!!")
-			return redirect("/course-content/"+str(course_id)) 
+			return redirect("/pay-now/"+str(course_id)) 
 	except:
 		flash("Please login!!!")
 		return redirect("/course-content/"+str(course_id))
 	
 @app.route("/get-enrollment-in-course/<int:course_id>")
 def Get_Enrollment_in_course(course_id):
-	user=GetUserInfo()
-	course=Courses.query.filter_by(course_id=course_id).first()
-	registered=Registered_Courses.query.filter_by(course_id=course_id,user_id=user.user_id).all()
-	if len(registered)>0:
-		return jsonify(valid=True,link="#",data="Enrolled")
-	else:
-		return jsonify(valid=True,link="/course-enroll/"+str(course_id),data="Enroll Now")
-	
+	try:
+		if session["logged_in"]:
+			user=GetUserInfo()
+			course=Courses.query.filter_by(course_id=course_id).first()
+			registered=Registered_Courses.query.filter_by(course_id=course_id,user_id=user.user_id).all()
+			if len(registered)>0:
+				if registered[0].payment_done:
+					return jsonify(valid=True,link="#",data="Enrolled")
+				else:	
+					return jsonify(valid=True,link="/pay-now/"+str(course_id),data="Pay Now")
+			else:
+				return jsonify(valid=True,link="/course-enroll/"+str(course_id),data="Enroll Now")
+		else:
+			return jsonify(valid=False,link="/course-enroll/"+str(course_id),data="Enroll Now")
+	except:
+		return jsonify(valid=False,link="/course-enroll/"+str(course_id),data="Enroll Now")
+
 @app.route("/course-details/<int:course_id>")
 def Course_Detail(course_id):
 	weeks=Courses.query.filter_by(course_id=course_id).first().weeks
@@ -244,16 +268,27 @@ def Course_content(course_id):
 
 @app.route("/getlecture/<int:lecture_id>-<int:course_id>")
 def Get_Lecture(lecture_id,course_id):
-	user=GetUserInfo()
-	course=Courses.query.filter_by(course_id=course_id).first()
-	registered=Registered_Courses.query.filter_by(course_id=course_id,user_id=user.user_id).all()
-	if len(registered)>0:
-		details=Lecture_details.query.filter_by(lecture_id=lecture_id).first()
-		return render_template("lecture_cont.html",lecture=details)
-	else:
-		flash("Not Enrolled PLEASE Enroll To This course!!!")
+	try:
+		if session["logged_in"]:
+			user=GetUserInfo()
+			course=Courses.query.filter_by(course_id=course_id).first()
+			registered=Registered_Courses.query.filter_by(course_id=course_id,user_id=user.user_id).all()
+			if len(registered)>0:
+				if registered[0].payment_done:
+					details=Lecture_details.query.filter_by(lecture_id=lecture_id).first()
+					return render_template("lecture_cont.html",lecture=details)
+				else:
+					flash("Please Complete Your Payment")
+					return redirect("/course-content/"+str(course_id))
+			else:
+				flash("Not Enrolled PLEASE Enroll To This course!!!")
+				return redirect("/course-content/"+str(course_id))
+		else:
+			flash("Please login!!!")
+			return redirect("/course-content/"+str(course_id))
+	except:
+		flash("Please Login!!!")
 		return redirect("/course-content/"+str(course_id))
-
 
 @app.route("/signup",methods=["GET","POST"])
 def signup():
