@@ -9,7 +9,7 @@ from static_function import *
 from flask_migrate import Migrate
 from datetime import datetime,timedelta
 from functools import wraps
-#
+###
 
 app=Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:mom0511@localhost/myparliament"
