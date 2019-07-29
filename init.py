@@ -84,7 +84,7 @@ def Home():
 			return render_template("home.html",nav_value=if_login())
 	except:
 		return render_template("home.html",nav_value=if_login())
-	
+
 
 @app.route("/dashboard/my-<string:name>")
 @login_required
@@ -143,7 +143,7 @@ def Add_Course():
 			new_course=Courses(name=name,author=author,duration=duration,fees=fees,demo_link=demolink,description=description)
 			db.session.add(new_course)
 			db.session.commit()
-			return redirect(url_for("get_admin_add_course"))	
+			return redirect(url_for("get_admin_add_course"))
 	except Exception as e:
 		return redirect("/")
 
@@ -165,7 +165,7 @@ def Add_Week():
 			lecture=Lecture_details(title=title,link=link,description=description)
 			new_week.lectures.append(lecture)
 			db.session.commit()
-			return redirect("/add-course-page")	
+			return redirect("/add-course-page")
 	except Exception as e:
 		return redirect("/")
 
@@ -191,7 +191,7 @@ def Add_Lecture(course_id):
 @app.route("/pay-now/<int:course_id>")
 def Pay_now(course_id):
 	return render_template("payment.html",course=course_id)
-	
+
 @app.route("/complete-payment/<int:course_id>",methods=["GET","POST"])
 def Complete_payment(course_id):
 	if request.method=="POST":
@@ -202,7 +202,7 @@ def Complete_payment(course_id):
 		flash("Something Went Wrong")
 		return redirect("/course-content/"+str(course_id))
 
-	
+
 @app.route("/dashboard")
 @login_required
 def Dashboard():
@@ -230,11 +230,11 @@ def Course_Enrollment(course_id):
 			return redirect("/course-content/"+str(course_id))
 		else:
 			flash("Please Login!!!")
-			return redirect("/pay-now/"+str(course_id)) 
+			return redirect("/pay-now/"+str(course_id))
 	except:
 		flash("Please login!!!")
 		return redirect("/course-content/"+str(course_id))
-	
+
 @app.route("/get-enrollment-in-course/<int:course_id>")
 def Get_Enrollment_in_course(course_id):
 	try:
@@ -245,7 +245,7 @@ def Get_Enrollment_in_course(course_id):
 			if len(registered)>0:
 				if registered[0].payment_done:
 					return jsonify(valid=True,link="#",data="Enrolled")
-				else:	
+				else:
 					return jsonify(valid=True,link="/pay-now/"+str(course_id),data="Pay Now")
 			else:
 				return jsonify(valid=True,link="/course-enroll/"+str(course_id),data="Enroll Now")
@@ -264,7 +264,7 @@ def Course_Detail(course_id):
 def Course_content(course_id):
 	details=Courses.query.filter_by(course_id=course_id).first()
 	return render_template("course_cont.html",course=details)
-	
+
 
 @app.route("/getlecture/<int:lecture_id>-<int:course_id>")
 def Get_Lecture(lecture_id,course_id):
