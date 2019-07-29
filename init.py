@@ -405,7 +405,70 @@ def registered_events():
     event=user.events
     return render_template("registered.html",event)
 
+#Events
+@app.route("/add-course-page")
+@login_required
+def get_admin_add_event():
+	return render_template("admin_add_event.html")
 
+@app.route("/add-event",methods=["GET","POST"])
+@login_required
+def Add_Event():
+	try:
+		if request.method=="POST":
+			name=request.form["name"]
+			organiser=request.form["organiser"]
+			duration=request.form["duration"]
+			start_date=request.form["start_date"]
+			end_date=request.form["end_date"]
+			fees=request.form["fees"]
+			description=request.form["description"]
+			new_event=Event_details(name=name,organiser=organiser,duration=duration,start_date=start_date,end_date=end_date,fees=fees,description=description)
+			db.session.add(new_event)
+			db.session.commit()
+			flash("Event Added")
+			return redirect("/add-event")
+	except Exception as e:
+		return redirect("/")
+
+
+
+@app.route("/event-register/<int:event_id>")
+def Event_Register(event_id):
+	try:
+		if session["logged_in"]:
+			user=GetUserInfo()
+			event=Event_details.query.filter_by(event_id=event_id).first()
+			register=Registered_Events()
+			db.session.add(register)
+			event.subscribers.append(register)
+			user.registered_in_events.append(register)
+			db.session.commit()
+			flash("Registered To This Event!!!")
+			return redirect("/event-content/"+str(event_id))
+		else:
+			flash("Please Login!!!")
+			return redirect("/event-content/"+str(event_id))
+	except:
+		flash("Please login!!!")
+		return redirect("/event-content/"+str(event_id))
+
+@app.route("/get-registration-in-event/<int:event_id>")
+def Get_registration_in_event(event_id):
+	user=GetUserInfo()
+	event=Event_details.query.filter_by(event_id=event_id).first()
+	registered=Registered_Events.query.filter_by(event_id=event_id,user_id=user.user_id).all()
+	if len(registered)>0:
+		return jsonify(valid=True,link="#",data="Registered")
+	else:
+		return jsonify(valid=True,link="/event-register/"+str(event_id),data="Register Now")
+
+@app.route("/event-content/<int:event_id>")
+def Event_content(event_id):
+	details=Event_details.query.filter_by(event_id=event_id).first()
+	return render_template("event_cont.html",event=details)
+
+#Events Ends
 
 @app.route("/logout")
 @login_required
@@ -441,32 +504,37 @@ def login():
 	except:
 		return "SORRY WE HAVE SOME TROUBLE!!!!! PLEASE TRY AGAIN!"
 
-@app.route("/forget_password")
+@app.route("/forgot-password-page")
+def forget_password_page():
+	return render_template("forgotpass.html")
+
+@app.route("/forgotpassword",methods=["GET","POST"])
 def forget_password():
   try:
     if request.method=="POST":
       email=request.form['email']
-      user=User_details.query.filter_by(email=email).first()
+      user=User_details.query.filter_by(email=email).all()
       if len(user)>0:
-        msg=Message('From MyParliament',sender='smtp.gmail.com',recipients=[uemail])
+        user=user[0]
+        # msg=Message('From MyParliament',sender='smtp.gmail.com',recipients=[uemail])
         otp=randint(100000,999999)
-        msg.body="Your otp for change password: "+str(otp)+". Valid for 1 hour."
+        # msg.body="Your otp for change password: "+str(otp)+". Valid for 1 hour."
         otp_obj=Otp_details(user_id=user.user_id,otp_no=otp,purpose=0,valid_till=(datetime.now()+timedelta(hours=1)))
         db.session.add(otp_obj)
-        mail.send(msg)
+        # mail.send(msg)
         db.session.commit()
-        return render_template("change_password.html",user.user_id)
+        return render_template("change_pass.html",uid=user.user_id,purpose=1)
       else:
         flash("Couldn't find your account with this email.")
-        return redirect("/forget_password")
+        return redirect("/forget-password")
     else:
       flash("Something went wrong.")
       return redirect("/forget_password")
   except Exception as e:
     return render_template("error.html",message="Some Error occured.")
 
-@app.route("/change_password/<int:uid>")
-def change_password(uid):
+@app.route("/change-password/<int:purpose>-<int:uid>")
+def change_password(purpose,uid):
   try:
     if request.method=="POST":
       otp=request.form["otp"]

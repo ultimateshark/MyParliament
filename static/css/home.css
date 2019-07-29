@@ -1,5 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Khula|Maven+Pro|Dosis');
 
+
+@font-face{
+	font-family:'Gilroy-ExtraBold';
+	src:url('../fonts/Gilroy-ExtraBold.ttf') format('truetype');
+}
+
+@font-face{
+	font-family:'Gilroy-Light';
+	src:url('../fonts/Gilroy-Light.ttf') format('truetype');
+}
+
+@font-face{
+	font-family:'SF';
+	src:url('../fonts/SF-Regular.ttf') format('truetype');
+}
+
+@font-face{
+	font-family:'Etna';
+	src:url('../fonts/etna.ttf') format('truetype');
+}
+
 body{
 	
 }
@@ -45,8 +66,13 @@ nav{
 	left:0;
 	height:80px;
 	top:0px;
-	z-index:11;
+	z-index:11 !important;
+/*	border-bottom:1px solid #dadada;*/	
+	box-shadow: 0 2px 19px 1px #dadada;
+	transition:0.4s ease-out;
+	background-color: #fff;
 }
+
 
 .logo{
 	font-family: 'Josefin Sans',sans-serif;
@@ -57,7 +83,7 @@ nav{
 	padding-top:50px;
 	padding-left:10px;
 	padding-right:10px;
-	color:#fff;
+	color:#000;
 }
 
 
@@ -66,8 +92,8 @@ nav{
 	margin-right:80px;
 	padding-top:20px;
 	float:right;
-	color:#000;
-	font-family: 'khula',sans-serif;	
+	font-family:'SF';
+
 }
 
 
@@ -85,8 +111,8 @@ nav{
 }
 
 .wrapper{
-	background:url("../img/shape.png");
-	background-size: cover;
+	background:url("../img/mp.png") no-repeat;
+	background-size: contain;
 	width:100%;
 	height:100vh;
 	position: absolute;
@@ -107,19 +133,47 @@ nav{
 	background-color:transparent;
 }
 
+/************************************************/
+
+
+
+.sm_list{
+	font-size:1.3em;
+	margin-top:90px;
+	margin-left:10px;
+	display: none;
+}
+
+.sm_list a{
+	text-decoration: none;
+	color:#fff;
+	font-family: 'Khula',sans-serif;
+	padding-left: 30px;
+}
+
+
+.navScroll{
+	box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+	background: #fff;
+	margin-top:-20px;
+	
+}
+
+
+
+
+/************************************************/
 .motto{
 	position: relative;
-	left:6%;
-	top:30%;
-	width:500px;
-	font-size: 3em;
-	color:#fff;
-	font-family:'Josefin Sans',sans-serif;
-	font-weight: bold;
+	text-align: center;
+	top:28%;
+	font-size: 4em;
+	color:#000;
+	font-family:'Etna';
 }
 
 .know_more_btn{
-	background-color:rgba(255,255,255,0.1);
+	background-color:rgba(0,0,0,0.5);
 	font-size: 0.4em;
 	border-radius:20px;
 	padding-left: 20px;
@@ -129,6 +183,7 @@ nav{
 	padding-top:5px;
 	padding-bottom:5px;
 	border:1px solid #fff;
+	z-index: 1;
 }
 
 
@@ -169,8 +224,8 @@ nav{
 	line-height:60px;
 /*	margin-top:200px;
 */	align-self:center;
-	font-size: 4.5em;
-	font-weight: bolder;
+	font-size: 5em;
+	font-family: 'Gilroy-ExtraBold';
 }
 
 
@@ -198,9 +253,9 @@ nav{
 
 }
 .who h1{
-	line-height: 60px;
-	font-size: 4em;
-
+	line-height: 65px;
+	font-size: 5em;
+	font-family:'Gilroy-ExtraBold';
 }
 
 
@@ -216,6 +271,7 @@ nav{
 .events_table{
 	background-color: rgba(255,255,255,0.7);
 	width:28%;
+	min-width: 300px;
 	font-family: 'Josefin Sans',sans-serif;
 	box-sizing: border-box;
 	padding:10px 40px 5px 10px;
@@ -294,56 +350,103 @@ nav{
 
 
 
-/*.test_wrap{
-	padding-top:40;
-}*/
 
-
-
-/*Partners Section Starts*/
-
-.partners_sec{
-	padding:40px 10px 40px 80px;
-}
-
-.partners_sec_wrap{
+.part_sec_wrap{
+	padding-top:50px;
+	padding-left:50px;
 	display: flex;
 	flex-direction: row;
 }
 
 
-.p_h{
+.part_h{
 	flex:1;
-	font-family:'Josefin Sans',sans-serif;
-	font-size:4em;
-	font-weight:bold;
-	transform: rotateZ(270deg);
-	line-height: 50px;
 }
 
-.part_cont_wrap{
-	flex:3;
-	float: right;
-	padding-right:150px;
-	padding-left:150px;
+
+.part_img{
+	flex:4;
+	text-align: center;
 }
 
-/*.part_cont_wrap{
-	width:700px;
-}*/
 
-
-.part_cont_wrap img{
+.part_img img{
 	width:200px;
-	padding-left:50px;
+	margin-top:10px;
+	margin-left:50px;
 }
 
 
-.part_cont_wrap img:first-child{
-	width:110px;
-	height: 120px;
+.p_h{
+	font-size:4em;
+	line-height: 55px;
+	font-weight: bold;
+	font-family: 'Josefin Sans',sans-serif;
 }
 
-.ccs{
-	width:100px;
+
+
+
+
+
+
+
+
+
+
+.p_h{
+	transform: rotate(270deg);
+	margin-top:100px;
+}
+
+
+/* FOOTER STARTS HERE */
+
+footer{
+	background:#292828;
+	margin-top:50px;
+}
+
+.footer_logo{
+	padding-left:30px;
+	padding-top:50px;
+	font-size: 3em;
+	font-family: 'Josefin Sans',sans-serif;
+	font-weight: bold;
+	color:#fff;
+}
+
+.footer_wrap{
+	display: flex;
+	flex-direction: row;
+}
+
+.footer_left{
+	flex:2;
+}
+
+.footer_list{
+	flex:1;
+	padding-right: 100px;
+}
+
+.footer_list_wrap{
+	display: flex;
+	flex-direction: row;
+}
+
+.list_one , .list_two{
+	flex:1;
+}
+
+.footer_list{
+	padding-top:10px;
+}
+
+.footer_list ul li{
+	font-size: 1.3em;
+	font-family: 'Khula',sans-serif;
+	list-style-type: none;
+	color:#fff;
+	font-weight: bold;
 }
