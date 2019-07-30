@@ -1,39 +1,104 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Khula|Maven+Pro|Dosis');
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-
-body{
-	
+@font-face{
+	font-family:'Gilroy-ExtraBold';
+	src:url('../fonts/Gilroy-ExtraBold.ttf') format('truetype');
 }
 
-*{
-	font-family: 'SF';
+@font-face{
+	font-family:'Gilroy-Light';
+	src:url('../fonts/Gilroy-Light.ttf') format('truetype');
+}
+
+@font-face{
+	font-family:'SF';
+	src:url('../fonts/SF-Regular.ttf') format('truetype');
+}
+
+@font-face{
+	font-family:'Etna';
+	src:url('../fonts/etna.ttf') format('truetype');
 }
 
 
 
 
-.course_bar{
-	margin-top:100px;
-}
-
-.courses_h{
+.all_courses_h{
 	font-size:1.5em;
-	font-family: 'Josefin Sans',sans-serif;
 	font-weight: bold;
+	font-family:'SF';
+	margin-left:6%;
 }
 
-.search_input input{
-	height: 30px;
+
+
+
+
+
+
+.course_box_wrap {
+  width: 23%;
+  float:left;
+
 }
 
-.search_input button{
-	height:36px;
-	border:none;
-	margin-left:-5px;
-	width:80px;
-	background: #2068AE;
-	color:#fff;
+.course_box{
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  border-radius:8px;
+  margin-left:20px;
+  margin-top:20px;
+  overflow: hidden;
 }
+
+.course_box img{
+  width:100%;
+  border-top-left-radius:8px;
+  border-top-right-radius:8px;
+}
+
+.course_cont{
+	margin:10px 5% 20px 5%;
+	flex-direction: row;
+}
+
+
+.course_cont:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.course_det{
+	font-family:'SF';
+	padding:5px;
+}
+
+div.course_name{
+	font-weight:bold;
+	font-size:1.1em;
+}
+
+
+div.tutor{
+	color:#696464;
+	padding-top:3px;
+}
+
+.tutor ,.dur{
+	padding-left:5px;
+	padding-top:2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .abt_courses{
 	background:linear-gradient(135deg , #145792 , #23AEBE);
@@ -114,11 +179,7 @@ body{
 }
 
 
-.all_courses_h{
-	font-size:1.5em;
-	font-weight: bold;
-	font-family:'Josefin Sans',sans-serif;
-}
+
 
  .all_course_box{
 	box-shadow:0px 4px 10px  rgba(0,0,0,0.2);
@@ -145,11 +206,39 @@ body{
   	text-overflow: ellipsis;
 }
 
+
+
 .see_more_btn{
 	font-size:1.1em;
 	padding-left:20px;
 	padding-right:20px;
 	background-color:rgba(192,192,192,0.1);
-	border:1px solid #206A8E;
+	border:1px solid #2b44ff;
 	border-radius:40px;
+	font-family: 'SF';
+	position: relative;
+	overflow: hidden;
+}
+
+.see_more_btn:before{
+	content:'';
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 0px;
+	height:100%;
+	z-index:-1;
+	border-radius:40px;
+	background: #2b44ff;
+	border-radius: 5px;
+	transition: all 0.5s ease;
+}
+
+.see_more_btn:hover:before {
+	width:100%;
+}
+
+.see_more_btn:hover{
+	color:#fff;
+	cursor: pointer;
 }

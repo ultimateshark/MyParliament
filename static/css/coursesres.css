@@ -16,6 +16,12 @@
 		width:100px;
 	}
 
+	 .course_box_wrap{
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+
 
 	.abt_courses_wrap{
 		display: flex;

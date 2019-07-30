@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block body %}
-<div class="row course_bar">
+<!-- <div class="row course_bar">
 	<div class="col-2 courses_h">COURSES</div>
 	<div class="col-7"></div>
 	<div class="col-3 search_input">
@@ -17,48 +17,50 @@
 		<button class="search_btn">Search</button>
 	</div>
 </div>
-
+ -->
 
 <!-- course Bar ends -->
-<br>
+<div style="margin-top:90px;"></div>
+
+
 
 
 
 <br><br>
-<!-- Enrolled Courses Ends -->
-<br><br>
+<div class="all_courses_h">All Courses</div>
 
-<div class="all_courses_sec">
-	<div class="all_courses_wrap">
-		<div class="row">
-			<div class="col-12 all_courses_h">ALL COURSES</div>
-		</div>
+	<div class="course_cont">
 
-		<div class="all_courses_cont">
-			
-			<div class="row">
-				{% if courses %}
-				{% for course in courses %}
-				<a href="/course-details/{{course.course_id}}">
-				<div class="col-2 col-5-sm all_course_box">
-					<img src="../static/img/course.jpg">
-					<div class="course_name_all">{{course.name}}</div>
-					<div class="course_auth">By : {{course.author}}</div>
-				</div>
-				</a>
-				{% endfor %}
-				{% else  %}
-				<h3 align="center">No Events Found</h3>
-				{% endif %}
+		{% if courses %}
+		{% for course in courses %}
+		<a href="/course-details/{{course.course_id}}">
+			<div class="course_box_wrap">
+			    <div class="course_box">
+			      <img src="../static/img/1.jpg">
+			      <div class="course_det">
+			      	<div class="course_name">{{course.name}}</div> 
+			      	
+			      	<div class="tutor">By {{course.author}}</div>
+			      	<div class="dur">{{course.duration}}</div>
 
-		</div>
-		
+			      </div>
+			    </div>
+	  		</div>
+	  	</a>
+	  	{% endfor %}
+		{% else  %}
+		<div style="text-align: center;margin-top:50px;font-family: 'SF';color:#7d7d7d;	">No Courses Found</div>
+		{% endif %}
 
+
+
+
+	
 	</div>
-</div>
-</div>
 
+		{% if courses%}
 		<div class="row"><div class="col-12 center "><button class="see_more_btn">See More</button></div></div>
+		{% endif %}
 
 
 {% endblock %}

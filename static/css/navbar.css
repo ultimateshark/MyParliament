@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Khula|Maven+Pro|Dosis');
 
-body{
-	
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: table;
 }
 
 

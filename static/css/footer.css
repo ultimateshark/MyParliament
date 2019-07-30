@@ -2,7 +2,8 @@
 
 footer{
 	background:#292828;
-	margin-top:50px;
+    display: table-row;
+    
 }
 
 .footer_logo{
