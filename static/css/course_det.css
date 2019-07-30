@@ -11,49 +11,7 @@ body{
 }
 
 
-nav{
-	position: fixed;
-	width:100%;
-	left:0;
-	height:80px;
-	top:0px;
-	z-index:11;
-}
 
-.logo{
-	font-family: 'Josefin Sans',sans-serif;
-	font-size:2em;
-	position: absolute;
-	left:40px;
-	top:-20px;
-	padding-top:40px;
-	padding-left:10px;
-	padding-right:10px;
-}
-
-
-
-.list{
-	margin-right:80px;
-	padding-top:0px;
-	float:right;
-	color:#000;
-	font-family: 'khula',sans-serif;	
-}
-
-
-.list a{
-	display: inline;
-	font-weight: bold;
-	font-size: 1.4em;
-	color:#000;
-	text-decoration: none;
-}
-
-nav ul li{
-	display: inline;
-	padding-left:30px;
-}
 
 /*Nav Bar Ends */
 
