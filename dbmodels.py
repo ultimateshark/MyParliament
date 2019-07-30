@@ -25,10 +25,11 @@ class Registered_Olympiads(db.Model):
     reg_id=db.Column(db.Integer,primary_key=True)
     user_id=db.Column(db.Integer,db.ForeignKey("user_details.user_id"))
     oly_id=db.Column(db.Integer,db.ForeignKey("olympiad_details.oly_id"))
-    answers=db.Column(db.String(6000),nullable=True)
-    final_score=db.Column(db.Integer,nullable=True)
+    answers=db.Column(db.String(6000),default="")
+    final_score=db.Column(db.Integer,default=0)
     olympiads=db.relationship("Olympiad_details",backref=db.backref('subscribers'))
     payment_done=db.Column(db.Boolean,default=0)
+    status=db.Column(db.Boolean)
 
 
 class Solved_Assignments(db.Model):
@@ -68,6 +69,17 @@ class Lecture_details(db.Model):
     description=db.Column(db.String(5000),nullable=True)
     week_id=db.Column(db.Integer,db.ForeignKey("week.week_id"),nullable=True)
 
+class Questions(db.Model):
+    __tablename__="questions"
+    q_id=db.Column(db.Integer,primary_key=True)
+    question=db.Column(db.String(500))
+    optA=db.Column(db.String(200))
+    optB=db.Column(db.String(200))
+    optC=db.Column(db.String(200))
+    optD=db.Column(db.String(200))
+    correctopt=db.Column(db.String(1))
+    olympiad_id=db.Column(db.Integer,db.ForeignKey("olympiad_details.oly_id"),nullable=True)
+
 class Olympiad_details(db.Model):
     __tablename__="olympiad_details"
     oly_id=db.Column(db.Integer,primary_key=True)
@@ -77,7 +89,8 @@ class Olympiad_details(db.Model):
     fees=db.Column(db.Integer)
     description=db.Column(db.String(300))
     rules=db.Column(db.String(1000))
-    questions=db.Column(db.String(6000),nullable=True)
+    status=db.Column(db.Integer,default=0)
+    questions=db.relationship("Questions",backref=db.backref("olympiad"))
 
 
 class Event_details(db.Model):

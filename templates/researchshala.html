@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Researchshala</title>
+ {% extends 'navbar.html' %}
+{% block head %}
+	<title>My Parliament | Researchshala</title>
 	<link rel="stylesheet" href="../static/css/researchshala.css">
 		<link rel="stylesheet" href="../static/css/simple-grid.css">
-</head>
-
-<body>
-	<h3>My Parliament</h3>
+{% endblock %}
+ 
+{% block body %}
  
     <div class="row">
 			<div class="col-12 research"><center>RESEARCHSHALA</center></div>
@@ -54,6 +52,4 @@
 	<img class="col-3" src="C:\Users\HP\Desktop\project parliament\static\images\guide.png">
 </div>	
 </div>
-
-</body>
-</html>
+{% endblock %}

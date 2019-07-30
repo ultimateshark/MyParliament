@@ -16,15 +16,15 @@
 
 <nav>
 	<ul class="list">
-		<li class="i"><a href="#">Profile</a></li>
-		<li><a href="#">LOGOUT</a></li>
+		<li class="i"><a href="/">Profile</a></li>
+		<li><a href="/logout">LOGOUT</a></li>
 	</ul>	
 </nav>
 
 <br>
 
 <div class="row">
-	<div class="col-12 up_course_h">UPLOAD COURSE</div>
+	<div class="col-12 up_course_h" align="center">Welcome Admin</div>
 </div>
 <div class="row">
 <form action="/add-course" method="POST" class="col-4">
@@ -62,6 +62,68 @@
 	<br><br>
 	<button>ADD Lecture</button>
 </form>
+</div>
+
+
+<br><br><br>
+<hr>
+<!-- Olympiads -->
+<div class="row">
+<form action="/add-olympiad" method="POST" class="col-6">
+	<input type="text" name="name" placeholder="OLYMPIADS NAME"> <br>
+	<input type="text" name="organizer" placeholder="Organizer"> <br>
+	<input type="number" name="duration" placeholder="duration"><br>
+	<input type="number" name="fees" placeholder="Fees"><br>
+	<input type="text" name="rules" placeholder="Rules"><br>
+	<textarea placeholder="Enter Description" name="description"></textarea><br>
+	<button >ADD Olympiad</button>	
+</form>
+
+<form action="/add-question" method="POST" class="col-6">
+	<label for="week1">SELECT Olympiad: </label>
+	<select name="olympiad_id" id="week1">
+		{% for olympiad in olympiads %}
+		  <option value="{{olympiad.oly_id}}">Olympiad : {{olympiad.oly_id}}</option>
+		{% endfor %}
+	</select>
+	<br><br>
+	<input type="text" name="Question" placeholder="ENTER QUESTION"><br>
+
+	<input type="text" name="optA" placeholder="Option A"><br>
+	<input type="text" name="optB" placeholder="Option B"><br>
+	<input type="text" name="optC" placeholder="Option C"><br>
+	<input type="text" name="optD" placeholder="Option D"><br>
+	<label for="week2">SELECT Olympiad: </label>
+	<select name="correctopt" id="week2">
+		  <option value="A">Option : A</option>
+		  <option value="B">Option : B</option>
+		  <option value="C">Option : C</option>
+		  <option value="D">Option : D</option>
+
+	</select><br><br>
+	<button>ADD Question</button><br><br>
+
+</form>
+
+</div>
+
+
+<br><br><br>
+<hr>
+<!-- Olympiads -->
+<div class="row">
+<form action="/add-event" method="POST" class="col-12">
+	<input type="text" name="name" placeholder="EVENT NAME"> <br>
+	<input type="text" name="organizer" placeholder="Organizer"> <br>
+	<input type="number" name="duration" placeholder="duration"><br>
+	<input type="number" name="fees" placeholder="Fees"><br>
+	<input type="date" name="start_date" placeholder="start date"><br>
+	<input type="date" name="end_date" placeholder="end date"><br>
+	<textarea placeholder="Enter Description" name="description"></textarea><br>
+	<button >ADD EVENT</button>	
+</form>
+
+
 </div>
 
 

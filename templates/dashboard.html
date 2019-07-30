@@ -14,7 +14,7 @@
 	<div class="logo">My Parliament</div>
 	<ul class="list">
 		<li class="i"><a href="#">{{name|upper}}</a></li>
-		<li class="i"><a href="/change-password">CHANGE PASSWORD</a></li>
+		<li class="i"><a href="/change-password-page">CHANGE PASSWORD</a></li>
 		<li><a href="/logout" class="login_btn">LOGOUT</a></li>
 	</ul>	
 </nav>
@@ -36,7 +36,16 @@
 		</div>
 </div>
 
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script type="text/javascript">
+	{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      swal('{{message}}');
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+</script>
 
 
 </body>

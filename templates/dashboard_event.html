@@ -36,12 +36,13 @@
 		<div class="enr_courses_box_wrap">
 
 			{% for events in enrolled_events %}
-
+			<a href="/event-details/{{events.events.event_id}}" style="text-decoration: none;" target="_parent">
 			<div class=" enr_course_box">
 				<img src="../static/img/course.jpg">
-				<div class="course_name">Web Development Course</div> 
-				<div class="course_auth">By Random Person</div>
+				<div class="course_name">{{events.events.name}}</div> 
+				<div class="course_auth">By {{events.events.organiser}}</div>
 			</div>
+		</a>
 			{% endfor %}
 			
 
@@ -65,13 +66,13 @@
 			<div class="row">
 				{% if events %}
 				{% for event in events %}
-
+				<a href="/event-details/{{event.event_id}}" style="text-decoration: none;" target="_parent">
 				<div class="col-2 col-5-sm all_course_box">
 					<img src="../static/img/course.jpg">
 					<div class="course_name_all">{{event.name}}</div>
-					<div class="course_auth">By {{event.organizer}}</div>
+					<div class="course_auth">By {{event.organiser}}</div>
 				</div>
-				
+				</a>
 				{% endfor %}
 				{% else %}
 				<h3 align="center">No Events Found</h3>

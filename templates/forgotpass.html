@@ -25,13 +25,13 @@
 			
 					<div class="col-12 wel_txt">
 						Welcome,<br>
-						<font style="color:#1F618A;">LOGIN</font> to continue
+						<font style="color:#1F618A;">Enter Email</font> to continue
 					</div>
 				
 				<br><br>
 			
 				<form action="/forgotpassword" method="POST">
-					<input type="email" placeholder="EMAIL ADDRESS"  name="email"> <br>
+					<input type="email" placeholder="EMAIL ADDRESS"  name="email"> <br><br><br>
 					<button class="login_btn">Send OTP</button>
 					
 				</form>
@@ -39,7 +39,16 @@
 </div>
 
 
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script type="text/javascript">
+	{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      swal('{{message}}');
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+</script>
 
 </body>
 </html>

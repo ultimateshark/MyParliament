@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Policy Workshops</title>
+ {% extends 'navbar.html' %}
+{% block head %}
+	<title>My Parliament | Policy Workshops</title>
 	<link rel="stylesheet" href="../static/css/policy workshop.css">
 		<link rel="stylesheet" href="../static/css/simple-grid.css">
-</head>
-<body>
-	<h3>My Parliament</h3>
+{% endblock %}
  
-    <div class="row">
+{% block body %}
+    <div class="row" style="margin-top: 7%">
 			<div class="col-12 policy">Initiatives-Policy Workshops</div>
 	</div><br>
 	
@@ -71,6 +69,4 @@
      
      
 
-
-</body>
-</html>
+{% endblock %}

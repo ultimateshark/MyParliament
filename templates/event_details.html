@@ -1,0 +1,71 @@
+ {% extends 'navbar.html' %}
+
+{% block head %}
+	<title>My Parliament - EVENTS </title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="../static/css/olympiad_1.css">
+	<link rel="stylesheet" href="../static/css/simple-grid.css">
+<script type="text/javascript">
+	function check_enrollment(){
+		var request = new XMLHttpRequest();
+	request.open('GET', "/get-enrollment-in-event/{{event.event_id}}");
+	request.responseType = 'JSON';
+
+	request.onload = function() {
+		var myArr = JSON.parse(this.responseText)
+	  document.getElementById("enroll").innerHTML="<a href="+myArr['link']+"><button>"+myArr['data']+"</button></a>"
+
+	};
+
+	request.send();	
+	}
+	
+</script>
+{% endblock %}
+{% block body %}
+
+<div class="wrap" style="margin-top: 2%">
+		<div class="left_area">
+				<div class="row">
+					<div class="col-12 time">Start Date : {{event.start_date}}/ End Date : {{event.end_date}}</div>
+					<div class="col-12 time">Total Fee : Rs. {{event.fees}} </div>
+				</div>
+				<div class="olymp_name_txt">
+					 {{event.name}}
+				</div>
+
+
+				<div class="row start_btn">
+					<div class="col-12  right" id="enroll">
+						<script type="text/javascript">check_enrollment()</script>
+						<a href="#"> <button>START</button></a>
+					</div>
+				</div>
+
+				<div class="olymp_txt" style="margin-left: -50px">EVENT</div>
+		</div>
+
+		<div class="input_area">
+			
+					<div class="col-12 wel_txt">
+						Description
+					</div>
+				
+					<h4>{{event.description}}</h4>
+				<br><br>
+				
+		</div>
+</div>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script type="text/javascript">
+	{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      swal('{{message}}');
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+</script>
+
+{% endblock %}

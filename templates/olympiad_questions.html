@@ -1,0 +1,57 @@
+ {% extends 'navbar.html' %}
+
+{% block head %}
+	<title>My Parliament - Olympiads </title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="../static/css/olympiad_1.css">
+	<link rel="stylesheet" href="../static/css/simple-grid.css">
+{% endblock %}
+{% block body %}
+
+<div class="wrap" style="margin-top: 2%">
+		<div class="left_area">
+				<div class="row">
+					<div class="col-12 time">Total Time : {{olympiad.duration}} hr.</div>
+				</div>
+				<div class="olymp_name_txt">
+					 {{olympiad.name}} 
+				</div>
+
+
+				<div class="rowt time_elapsed right">
+					<div class="col-12   time_el_val">
+						{{score}}
+					</div>
+					<div class="time_el_txt">CURRENT SCORE</div>
+				</div>
+
+				<div class="olymp_txt">OLYMPIAD</div>
+		</div>
+
+		<div class="input_area">
+			
+					
+				
+					<ol class="rules_cont">
+						<div class="ques">
+							<div class="ques_num">Question {{next-1}}.</div><br>
+						{{question.question}}
+						<br>
+						<form action="/submit-olympiad-{{olympiad.oly_id}}-{{next}}" method="POST">
+							<li> <input type="radio" value="A" name="ques"> {{question.optA}}</li>
+							<li> <input type="radio" value="B" name="ques"> {{question.optB}}</li>
+							<li> <input type="radio" value="C" name="ques"> {{question.optC}}</li>
+							<li> <input type="radio" value="D" name="ques"> {{question.optD}}</li>
+					</ol>
+
+					<div class="row sub_btns">
+						<div class="col-5 right"><button class="prev_btn">Next</button></div>
+					</div>
+					</form>
+				<br><br>
+				
+		</div>
+</div>
+
+
+{% endblock %}

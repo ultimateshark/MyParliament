@@ -46,11 +46,13 @@
 			<div class="row">
 				{% if olympiads %}
 				{% for olympiad in olympiads %}
+				<a href="/olympiad-details/{{olympiad.oly_id}}" style="text-decoration: none;" target="_parent">
 				<div class="col-2 col-5-sm all_course_box">
 					<img src="../static/img/course.jpg">
-					<div class="course_name_all">Web Development Course Web Development Course Web Development Course</div>
-					<div class="course_auth">By Random Person</div>
+					<div class="course_name_all">{{olympiad.name}}</div>
+					<div class="course_auth">By {{olympiad.organiser}}</div>
 				</div>
+			</a>
 				{% endfor %}
 				{% else %}
 				<h3 align="center">No Olympiads Found</h3>

@@ -1,20 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Third Box Internship</title>
+ {% extends 'navbar.html' %}
+{% block head %}
+	<title>My Parliament | Third Box Internship</title>
 	<link rel="stylesheet" href="../static/css/third box.css">
 		<link rel="stylesheet" href="../static/css/simple-grid.css">
-</head>
-<body>
-	<h3>My Parliament</h3>
+{% endblock %}
  
+{% block body %}
+
+<div style="margin-top: 7%;margin-left: 7%;margin-right: 7%"> 
     <div class="row">
 			<div class="col-12 thirdbox">Initiatives-(Third-Box Internship)</div>
 	</div>
 	
 <div class="workshop_wrap">
 	<div class="row">
-	    <div class="col-12 june"><b>20th June ,2016 - 30th July,2016</b></div>
+	    <div class="col-12 june" style="background-color:rgba(32, 106, 134,1)"><b>20th June ,2016 - 30th July,2016</b></div>
      </div>
     <div class="row">
         <div class="col-12 theory">
@@ -29,5 +29,6 @@
 <img class="col-4" src="file:///C:/Users/HP/Desktop/project%20parliament/static/images/krishna%20premi.jpg">
 <img  class="col-4" src="file:///C:/Users/HP/Desktop/project%20parliament/static/images/Akash%20Pandey.jpg">
 </div>
-</body>
-</html>
+
+</div>
+{% endblock %}
