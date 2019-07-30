@@ -35,19 +35,34 @@ footer a:active {
 	<nav>
 		<div class="logo" style="color: black;">My Parliament</div>
 		
+		<!-- <ul class="list">
+			<li class="i"><a href="/courses-all">Courses</a></li>
+			<li class="i"><a href="/olympiad-all">Olympiad</a></li>
+			<li class="i"><a href="/event-all">Events</a></li>
+			<li>
+				<a href="{{nav_value[1]}}" class="login_btn">{{nav_value[0]}}</a>
+			</li>
+		</ul> -->
+
 		<ul class="list">
 			<li class="i"><a href="/courses-all">Courses</a></li>
 			<li class="i"><a href="/olympiad-all">Olympiad</a></li>
 			<li class="i"><a href="/event-all">Events</a></li>
 			<li>
-				<div class="dropdown">
-					<a href="{{nav_value[1]}}" class="login_btn">{{nav_value[0]}}</a>
-					
-				</div>
+				<a href="{{nav_value[1]}}" class="login_btn">{{nav_value[0]}}</a>
 			</li>
+			<li><span class="side_menu" onclick="openNav()">&#9776;</span></li>
 		</ul>
 
 	</nav>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="/courses-all">Courses
+  <a href="/olympiad-all">Olympiad</a>
+  <a href="/event-all">Events</a>
+  <a href="{{nav_value[1]}}">{{nav_value[0]}}</a>
+</div>
 
 	{% block body %}{% endblock %}
 <footer>
@@ -117,5 +132,17 @@ $(window).scroll(function(){
       }   
   }
 </script>
+
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
 </html>	
 	

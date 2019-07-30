@@ -9,8 +9,8 @@ footer{
 	padding-left:30px;
 	padding-top:50px;
 	font-size: 3em;
-	font-family: 'Josefin Sans',sans-serif;
-	font-weight: bold;
+	font-family: 'ETNA';
+	
 	color:#fff;
 }
 
@@ -43,12 +43,15 @@ footer{
 
 .footer_list ul li{
 	font-size: 1.3em;
-	font-family: 'Khula',sans-serif;
+	font-family:'SF';
 	list-style-type: none;
 	color:#fff;
-	font-weight: bold;
+	padding-top:10px;
 }
 
+.footer_list ul li:hover{
+	opacity:0.5;
+}
 
 @media only screen and (max-width: 650px){
 	.footer_wrap{

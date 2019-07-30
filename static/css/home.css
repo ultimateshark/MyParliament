@@ -26,89 +26,9 @@ body{
 }
 
 
-/**{
-	font-family:'Josefin Sans',sans-serif;
-}*/
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown_cont {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown_cont a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown_cont a:hover {background-color: #f1f1f1}
-
-.dropdown:hover .dropdown_cont {
-  display: block;
-}
-
-.dropdown:hover .dropbtn {
-  background-color: #3e8e41;
-}
-
-nav{
-	position: fixed;
-	width:100%;
-	left:0;
-	height:80px;
-	top:0px;
-	z-index:11 !important;
-/*	border-bottom:1px solid #dadada;*/	
-	box-shadow: 0 2px 19px 1px #dadada;
-	transition:0.4s ease-out;
-	background-color: #fff;
-}
-
-
-.logo{
-	font-family: 'Josefin Sans',sans-serif;
-	font-size:2.5em;
-	position: absolute;
-	left:40px;
-	top:-20px;
-	padding-top:50px;
-	padding-left:10px;
-	padding-right:10px;
-	color:#000;
-}
 
 
 
-.list{
-	margin-right:80px;
-	padding-top:20px;
-	float:right;
-	font-family:'SF';
-
-}
-
-
-.list a{
-	display: inline;
-	font-weight: bold;
-	font-size: 1.4em;
-	color:#000;
-	text-decoration: none;
-}
-
-.list>li{
-	display: inline;
-	padding-left:30px;
-}
 
 .wrapper{
 	background:url("../img/mp.png") no-repeat;
@@ -121,18 +41,11 @@ nav{
 
 }
 
-.login_btn{
-	font-family: 'Josefin Sans',sans-serif;	
-	border-radius: 50px;
-	border: 1.5px solid #000;
-	position: relative;
-	padding-top:5px;
-	padding-bottom:2px;
-	padding-left:40px; 
-	padding-right: 40px;
-	background-color:transparent;
-}
 
+
+a.login_btn{
+	color: #fff;
+}
 /************************************************/
 
 
@@ -147,7 +60,7 @@ nav{
 .sm_list a{
 	text-decoration: none;
 	color:#fff;
-	font-family: 'Khula',sans-serif;
+	font-family: 'SF';
 	padding-left: 30px;
 }
 
@@ -155,7 +68,7 @@ nav{
 .navScroll{
 	box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 	background: #fff;
-	margin-top:-20px;
+	margin-top:-10px;
 	
 }
 
@@ -172,19 +85,7 @@ nav{
 	font-family:'Etna';
 }
 
-.know_more_btn{
-	background-color:rgba(0,0,0,0.5);
-	font-size: 0.4em;
-	border-radius:20px;
-	padding-left: 20px;
-	padding-right:20px;
-	font-weight: bold;
-	color:#fff;
-	padding-top:5px;
-	padding-bottom:5px;
-	border:1px solid #fff;
-	z-index: 1;
-}
+
 
 
 
@@ -196,8 +97,7 @@ nav{
 
 }
 
-.box{
-}
+
 
 .box_wrap{
 	display: flex;
@@ -213,7 +113,7 @@ nav{
 .box .cont{
 	font-size:1.7em;
 	line-height: 42px;
-	font-family: 'Khula',sans-serif;
+	font-family: 'SF';
 	align-self: flex-end;
 }
 
@@ -242,14 +142,14 @@ nav{
 	margin-left:30px;
 	padding:60px 70px 45px 50px;
 	box-sizing: border-box;
-	background-color:#206A8E;
+	background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
 	color:#fff;
 	flex-basis: 30%;
 }
 
 
 .who .cont{
-	font-family: 'Khula',sans-serif;
+	font-family: 'SF';
 
 }
 .who h1{
@@ -307,7 +207,7 @@ nav{
 	font-size:5.2em;
 	color:#fff;
 	font-weight: bolder;
-	font-family: 'Josefin Sans',sans-serif;
+	font-family: 'Gilroy-ExtraBold';
 	text-align: right;
 }
 
@@ -315,10 +215,13 @@ nav{
 .see_h{
 	font-size:3.5em;
 	line-height: 55px;
-	font-family: 'Josefin Sans',sans-serif;
+	font-family: 'Gilroy-ExtraBold';
 	padding-top:50px;
+	text-align: justify;
+
 	/*background:linear-gradient(#F0A819,#FF6337);*/
 }
+
 
 
 .test_sec{
@@ -327,7 +230,7 @@ nav{
 }
 
 .test_box{
-	font-family: 'Josefin Sans',sans-serif;
+	font-family:'SF';
 	font-size:1.5em;
 	text-align: justify;
 	padding:20px 30px 20px 30px;
@@ -381,7 +284,7 @@ nav{
 	font-size:4em;
 	line-height: 55px;
 	font-weight: bold;
-	font-family: 'Josefin Sans',sans-serif;
+	font-family: 'Gilroy-ExtraBold';
 }
 
 
@@ -400,53 +303,3 @@ nav{
 }
 
 
-/* FOOTER STARTS HERE */
-
-footer{
-	background:#292828;
-	margin-top:50px;
-}
-
-.footer_logo{
-	padding-left:30px;
-	padding-top:50px;
-	font-size: 3em;
-	font-family: 'Josefin Sans',sans-serif;
-	font-weight: bold;
-	color:#fff;
-}
-
-.footer_wrap{
-	display: flex;
-	flex-direction: row;
-}
-
-.footer_left{
-	flex:2;
-}
-
-.footer_list{
-	flex:1;
-	padding-right: 100px;
-}
-
-.footer_list_wrap{
-	display: flex;
-	flex-direction: row;
-}
-
-.list_one , .list_two{
-	flex:1;
-}
-
-.footer_list{
-	padding-top:10px;
-}
-
-.footer_list ul li{
-	font-size: 1.3em;
-	font-family: 'Khula',sans-serif;
-	list-style-type: none;
-	color:#fff;
-	font-weight: bold;
-}
