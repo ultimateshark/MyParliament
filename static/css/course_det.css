@@ -1,5 +1,24 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Khula|Maven+Pro|Dosis');
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@font-face{
+	font-family:'Gilroy-ExtraBold';
+	src:url('../fonts/Gilroy-ExtraBold.ttf') format('truetype');
+}
+
+@font-face{
+	font-family:'Gilroy-Light';
+	src:url('../fonts/Gilroy-Light.ttf') format('truetype');
+}
+
+@font-face{
+	font-family:'SF';
+	src:url('../fonts/SF-Regular.ttf') format('truetype');
+}
+
+@font-face{
+	font-family:'Etna';
+	src:url('../fonts/etna.ttf') format('truetype');
+}
+
+
 
 body{
 	height: auto;
@@ -7,7 +26,7 @@ body{
 }
 
 *{
-	font-family: 'Khula',sans-serif;
+	font-family:'SF';
 }
 
 
@@ -72,11 +91,20 @@ iframe{
 	height:inherit;
 }
 
+.category span{
+	font-weight: bold;
+	font-family: 'SF';
+	font-size:1.1em;
+}
 
 .course_name{
 	font-weight: bold;
-	font-size:1.8em;
+	font-size:1.4em;
+	font-family: 'SF';
+	margin-top:20px;
 }
+
+
 
 .course_auth{
 	font-size:1.2em;
@@ -129,5 +157,79 @@ iframe{
 }
 
 .det_txt , .tut_txt{
+	font-size:1.2em;
+}
+
+.tabs{
+  margin-top:30px;
+  display: flex;
+  flex-direction: row;
+}
+
+.tabbtn{
+  width: 18%;
+  background-color: #eee;
+  margin-left:0px;
+  margin-top:2px;
+  overflow: hidden;
+  text-align: center;
+  padding-top:15px;
+  padding-bottom: 15px;
+  font-family: 'Gilroy-ExtraBold';
+}
+
+.tabbtn:not(:last-child){
+	border-right:none;
+}
+
+.tabbtn:first-child {
+	border-top-left-radius: 8px;
+	border-bottom-left-radius: 8px;
+}
+
+.tabbtn:last-child{
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+
+.tabbtn:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.tabbtn:hover{
+	cursor: pointer;
+	opacity: 0.6;
+	transition: 0.3s;
+}
+
+
+.active{
+	background-color:#2b44ff;
+	color:#fff;
+}
+
+.course_desc{
+	position: relative;
+	margin-top:40px;
+	padding-left:5%;
+	width:85%;
+	margin-right:5%;
+	text-align: justify;
+	font-family: 'SF';
+	line-height: 26px;
+	font-size:1.2em;
+}
+
+.aud_h{
+	font-size:1.3em;
+	font-weight: bold;
+	margin-left:5%;
+	margin-top:10px;
+}
+
+.target_aud li{
+	margin-left:4%;
 	font-size:1.2em;
 }

@@ -41,21 +41,9 @@
 <!-- Nav Bar Ends  -->
 
 
-<div class="row course_bar">
-	<div class="col-2 courses_h">COURSE</div>
-	<div class="col-7"></div>
-	<div class="col-3 search_input">
-		<input type="text" placeholder="Search" name="search">
-		<button class="search_btn">Search</button>
-	</div>
-</div>
 
 
-<div class="course_img">
-	<div class="course_img_wrap">
 
-	</div>
-</div>
 
 <!-- <div class="row course_name_det">
 	<div class="col-12">
@@ -87,7 +75,8 @@
 
 		<div class="course_det_right_sec">
 			
- 			<iframe src="/course-content/{{course_id}}" width="100%" id="loadframe" name="loadingFrame" height="100%" onload="iframeLoaded()" style="overflow: hidden;border: none;" scrolling="no"></iframe> 
+			
+ 			<iframe src="/course-content/{{course_id}}"  id="loadframe" name="loadingFrame"  onload="iframeLoaded()" style="overflow: hidden;border:none;height:80%;width:90%;margin-left:5%;margin-right: 5%;" scrolling="no"></iframe> 
 
 		</div>
 
@@ -103,5 +92,8 @@
       }   
   }
 </script>
+
+
+
 
 {% endblock %}

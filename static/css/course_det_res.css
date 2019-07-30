@@ -6,8 +6,16 @@
 	.tut_det{
 		text-align: left;
 	}
-	/*.course_det_wrap{
-		display: flex;
-		flex-direction:column;
-	}*/
+	
+	.tabs{
+	    display: flex;
+	    flex-direction: column;
+  }
+
+  .tabbtn{
+  	width: 90%;
+  	border-radius: 8px;
+  	margin-top:10px;
+  }
+
 }

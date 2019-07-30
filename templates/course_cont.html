@@ -39,7 +39,7 @@
 <body>
 
 <div class="row">
-					<div class="col-8">
+				<!-- 	<div class="col-8">
 						<div class="course_name">{{course.name}}</div>
 							<div class="course_auth">By {{course.author}}</div>
 					</div>
@@ -58,20 +58,65 @@
 					<div class="col-10 abt_course_txt ">
 						{{course.description}}
 					</div>
+				</div> -->
+
+			<div style="margin-left:5%;">
+				<div class="course_name" style="margin-left:0px;">Nvidia and UE4 Technologies Practice</div>
+				<div class="tutor_name" style="margin-top:5px;">By Jason Naoi </div>
+				<div class="category" style="margin-top:20px;"><span>Category:</span> Nvidia , Photograhy , Software Development</div>
+
+
+				<div class="tabs">
+					<div class="tabbtn active" onclick="openTab(event,'desc')">Description</div>
+					<div class="tabbtn" onclick="openTab(event,'progress')">Progress</div>
+					<div class="tabbtn" onclick="openTab(event,'announce')">Announcement</div>
+					<div class="tabbtn" onclick="openTab(event,'tutor')">Tutor</div>
 				</div>
 
-				<div class="row">
+
+			</div>
+
+
+
+<!-- Description Starts Here -->
+			<div id="desc" class="tab_cont">
+				<div class="row" >
 					<div class="col-10">
-						<div class="plyr__video-embed" id="player" >
+						<div class="plyr__video-embed" id="player" style="position: relative;">
     						<iframe
 						        src="{{course.demo_link}}?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
 						        allowfullscreen
 						        allowtransparency
-						        allow="autoplay">
+						        allow="autoplay"
+						        style="">
 						    </iframe>
 						</div>
 					</div>
 				</div>
+
+				<br>
+
+				<div class="course_desc">
+					The primary goal of this quick start guide is to introduce you to Unreal Engine 4`s (UE4) development environment. By the end of this guide, you`ll know how to set up and develop C++ Projects in UE4. This guide shows you how to create a new Unreal Engine project, add a new C++ class to it, compile the project, and add an instance of a new class to your level. By the time you reach the end of this guide, you`ll be able to see your programmed Actor floating above a table in the level.
+
+					This quick start guide shows you how to add assets to your Unreal Engine (UE4) games. By the end of this guide, you`ll know how to use the Project Browser to create new projects and navigate the Content Browser to find and add content. You`ll also know where to find information on the FBX Content Pipeline while learning how to use the Material Editor to modify Materials before applying them to a Static Mesh Actor.
+
+				</div>
+
+
+				<div class="aud_h">Target Audience</div>
+
+				<ul class="target_aud">
+					<li>Students</li>
+					<li>Teachers</li>
+					<li>Professors</li>
+					<li>Application developers</li>
+					<li>Application designers</li>
+
+				</ul>
+
+
+				
 				<br><br>
 
 				<div class="row">
@@ -96,6 +141,40 @@
 					</div>
 				</div>
 
+			</div>
+
+<!-- Description Ends Here -->
+
+
+<!-- Progress Starts Here -->
+
+<div id="progress" class="tab_cont" style="display: none;">
+	Progress
+</div>
+
+<!-- Progress Ends Here -->
+
+
+<!-- Announcement Starts Here -->
+
+<div id="announce" class="tab_cont" style="display: none;">
+	Announcement
+</div>
+
+<!-- Announcement Progress Ends Here -->
+
+
+
+<!-- Tutor Starts Here -->
+
+<div id="tutor" class="tab_cont" style="display: none;">
+	Tutor
+</div>
+
+<!-- Tutor Ends Here -->
+
+
+
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script type="text/javascript">
 	{% with messages = get_flashed_messages() %}
@@ -106,5 +185,25 @@
   {% endif %}
 {% endwith %}
 </script>
+
+<script>
+function openTab(e, tab) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("tab_cont");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+
+  tablinks = document.getElementsByClassName("tabbtn");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace("active", "");
+  }
+  document.getElementById(tab).style.display = "block";
+  e.currentTarget.className += " active";
+}
+</script>
+
+
+
 </body>
 </html>
