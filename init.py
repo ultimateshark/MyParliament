@@ -893,7 +893,8 @@ def Address_update():
 			flash("Address Updated Successfully")
 			return redirect("/")
 		else:
-			raise f'Wrong Method Used.'
+			flash("Method Not Allowed")
+			return render_template("error.html")
 	except Exception as e:
 		return render_template("error.html",message=str(e))
 

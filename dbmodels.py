@@ -7,11 +7,10 @@ class Registered_Courses(db.Model):
     reg_id=db.Column(db.Integer,primary_key=True)
     user_id=db.Column(db.Integer,db.ForeignKey("user_details.user_id"))
     course_id=db.Column(db.Integer,db.ForeignKey("courses.course_id"))
-    progress=db.Column(db.Integer,db.ForeignKey("week.week_id"))
     courses=db.relationship("Courses",backref=db.backref('subscribers'))
     payment_done=db.Column(db.Boolean,default=0)
 
-class Registered_Events(db.Model):                    
+class Registered_Events(db.Model):
     __tablename__="registered_events"
     reg_id=db.Column(db.Integer,primary_key=True)
     user_id=db.Column(db.Integer,db.ForeignKey("user_details.user_id"))
@@ -20,7 +19,7 @@ class Registered_Events(db.Model):
     events=db.relationship("Event_details",backref=db.backref('subscribers'))
     payment_done=db.Column(db.Boolean,default=0)
 
-class Registered_Olympiads(db.Model):                 
+class Registered_Olympiads(db.Model):
     __tablename__="registered_olympiads"
     reg_id=db.Column(db.Integer,primary_key=True)
     user_id=db.Column(db.Integer,db.ForeignKey("user_details.user_id"))
@@ -31,6 +30,12 @@ class Registered_Olympiads(db.Model):
     payment_done=db.Column(db.Boolean,default=0)
     status=db.Column(db.Boolean)
 
+class Progress(db.Model):
+    __tablename__="progress"
+    p_id=db.Column(db.Integer,primary_key=True)
+    user_id=db.Column(db.Integer,db.ForeignKey("user_details.user_id"))
+    lecture_id=db.Column(db.Integer,db.ForeignKey("lecture_details.lecture_id"))
+    status=db.Column(db.Boolean)
 
 class Solved_Assignments(db.Model):
     __tablename__="solved_assignments"
@@ -52,6 +57,14 @@ class Courses(db.Model):
     description=db.Column(db.String(1000))
     demo_link=db.Column(db.String(1000))
     weeks=db.relationship("Week",backref=db.backref('course'))
+    announce=db.relationship("Announcements",backref=db.backref('of_course'))
+
+class Announcements(db.Model):
+    __tablename__="announcements"
+    a_id=db.Column(db.Integer,primary_key=True)
+    course_id=db.Column(db.Integer,db.ForeignKey("courses.course_id"),nullable=True)
+    title=db.Column(db.String(60),nullable=True)
+    decription=db.Column(db.String(600),nullable=True)
 
 class Week(db.Model):
     __tablename__="week"
@@ -59,6 +72,7 @@ class Week(db.Model):
     lectures=db.relationship("Lecture_details",backref=db.backref('week'))
     assignment=db.Column(db.String(6000),nullable=True)
     course_id=db.Column(db.Integer,db.ForeignKey("courses.course_id"),nullable=True)
+    questions=db.relationship("Questions",backref=db.backref("olympiad"))
 
 
 class Lecture_details(db.Model):
@@ -79,6 +93,21 @@ class Questions(db.Model):
     optD=db.Column(db.String(200))
     correctopt=db.Column(db.String(1))
     olympiad_id=db.Column(db.Integer,db.ForeignKey("olympiad_details.oly_id"),nullable=True)
+    week_id=db.Column(db.Integer,db.ForeignKey("week.week_id"),nullable=True)
+
+class Images(db.Model):
+    __tablename__="images"
+    image_id=db.Column(db.Integer,primary_key=True)
+    file_name=db.Column(db.String(100))
+    event_id=db.Column(db.Integer,db.ForeignKey("event_details.event_id"))
+    oly_id=db.Column(db.Integer,db.ForeignKey("olympiad_details.oly_id"))
+    course_id=db.Column(db.Integer,db.ForeignKey("courses.course_id"))
+
+class Rel_questions_images(db.Model):
+    __tablename__="rel_questions_images"
+    r_id=db.Column(db.Integer,primary_key=True)
+    q_id=db.Column(db.Integer,db.ForeignKey("questions.q_id"))
+    image_id=db.Column(db.Integer,db.ForeignKey("images.image_id"))
 
 class Olympiad_details(db.Model):
     __tablename__="olympiad_details"
@@ -103,7 +132,18 @@ class Event_details(db.Model):
     end_date=db.Column(db.String(10))
     fees=db.Column(db.Integer)
     description=db.Column(db.String(300))
+    venue=db.Column(db.String(50))
     user_id=db.Column(db.Integer,db.ForeignKey("user_details.user_id"),nullable=True)
+    schedule=db.relationship("Schedule",backref=db.backref("of_event"))
+
+class Schedule(db.Model):
+    __tablename__="schedule"
+    s_id=db.Column(db.Integer,primary_key=True)
+    event_id=db.Column(db.Integer,db.ForeignKey("event_details.event_id"),nullable=True)
+    day=db.Column(db.Integer)
+    start_time=db.Column(db.DateTime)
+    end_time=db.Column(db.DateTime)
+    description=db.Column(db.String(50))
 
 class Address(db.Model):
     __tablename__="address"
@@ -135,14 +175,19 @@ class Otp_details(db.Model):
 class User_details(db.Model):
     __tablename__="user_details"
     user_id=db.Column(db.Integer,primary_key=True)
+    account_type=db.Column(db.Boolean)
     name=db.Column(db.String(100))
     email=db.Column(db.String(50),unique=True,nullable=False)
     contact_no=db.Column(db.Integer,nullable=True)
     password=db.Column(db.String(200),nullable=False)
     verified=db.Column(db.Boolean)              #1=yes or 0=no (id is verified with otp or not)
+    profile_updated=db.Column(db.Boolean)
+    class_type=db.Column(db.String(2))      #l1, l2, l3, l4, l5
+    instituton=db.Column(db.String(50))
+    profile_pic=db.Column(db.LargeBinary)
     address_id=db.Column(db.Integer,db.ForeignKey("address.address_id"),nullable=True)
     registered_in_courses=db.relationship("Registered_Courses",backref=db.backref('subscribed_by'))
     registered_in_events=db.relationship("Registered_Events",backref=db.backref('subscribed_by'))
     solved_assignments=db.relationship("Solved_Assignments",backref=db.backref('subscribed_by'))
     registered_in_olympiads=db.relationship("Registered_Olympiads",backref=db.backref('subscribed_by'))
-    
+    prgrss=db.relationship("Progress",backref=db.backref('of_user'))
