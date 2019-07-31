@@ -1,72 +1,55 @@
- {% extends 'navbar.html' %}
+{% extends 'navbar.html' %}
 {% block head %}
-	<title>My Parliament - Events </title>
-	<meta name="viewport" content="width=device-width,initial-scale=1.0">
-	<link rel="stylesheet" href="../static/css/courses.css">
-	<link rel="stylesheet" href="../static/css/coursesres.css">
-	<link rel="stylesheet" href="../static/css/simple-grid.css">
-
-</head>
-<body>
-
-
+<title>My Parliament - Home </title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="../static/css/courses.css">
+<link rel="stylesheet" href="../static/css/coursesres.css">
+<link rel="stylesheet" href="../static/css/simple-grid.css">
 {% endblock %}
 
 {% block body %}
-<div class="row course_bar">
-	<div class="col-2 courses_h">Events</div>
-	<div class="col-7"></div>
-	<div class="col-3 search_input">
-		<input type="text" placeholder="Search" name="search">
-		<button class="search_btn">Search</button>
-	</div>
-</div>
+
+<div style="margin-top:90px;"></div>
 
 
-<!-- course Bar ends -->
-<br>
 
-<div class="abt_courses">
-	<div class="abt_courses_wrap">
-		<div class="mp_courses_h">My Parliament <br> Events</div>
-		<div class="mp_courses_txt">Lorem ipsum dolor sit Amet.Lorem ipsum dolor sit AmetLorem ipsum dolor sit AmetLorem ipsum dolor sit AmetLorem ipsum dolor sit AmetLorem ipsum dolor sit Amet</div>
-	</div>
-</div>
+
 
 <br><br>
-<br><br>
+<div class="all_courses_h">All Courses</div>
 
-<div class="all_courses_sec">
-	<div class="all_courses_wrap">
-		<div class="row">
-			<div class="col-12 all_courses_h">ALL EVENTS</div>
-		</div>
+	<div class="course_cont">
 
-		<div class="all_courses_cont">
-			<div class="row">
-				{% if events %}
-				{% for event in events %}
-				<a href="/event-details/{{event.event_id}}" style="text-decoration: none;" target="_parent">
-				
-				<div class="col-2 col-5-sm all_course_box">
-					<img src="../static/img/course.jpg">
-					<div class="course_name_all">{{event.name}}</div>
-					<div class="course_auth">By {{event.organiser}}</div>
-				</div>
-				</a>
-				{% endfor %}
-				{% else %}
-				<h3 align="center">No Events Found</h3>
-				{% endif %}
+		{% if events %}
+		{% for event in events %}
+		<a href="/event-details/{{event.event_id}}" target="_parent">
+			<div class="course_box_wrap">
+			    <div class="course_box">
+			      <img src="../static/img/events.jpg">
+			      <div class="course_det">
+			      	<div class="course_name">{{event.name}}</div> 
+			      	
+			      	<div class="tutor">By {{event.organiser}}</div>
+			      	<div class="dur">20 Sep 2019</div>
 
-		</div>
+			      </div>
+			    </div>
+	  		</div>
+	  	</a>
+	  	{% endfor %}
+		{% else  %}
+		<div style="text-align: center;margin-top:50px;font-family: 'SF';color:#7d7d7d;	">No Events Found</div>
+		{% endif %}
 
+
+
+
+	
 	</div>
-</div>
-</div>
 
+		{% if courses%}
 		<div class="row"><div class="col-12 center "><button class="see_more_btn">See More</button></div></div>
-
+		{% endif %}
 
 
 {% endblock %}
