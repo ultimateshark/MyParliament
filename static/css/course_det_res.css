@@ -18,4 +18,24 @@
   	margin-top:10px;
   }
 
+  .course_det_enr_wrap{
+  	display: flex;
+  	flex-direction: column;
+  }
+
+  .enr_btn_wrap{
+  	padding-top:20px;
+  }
+
+  .course_last_det_wrap{
+  	display: flex;
+  	flex-direction: column;
+  }
+
+  .last{
+  	width:100%;
+  }
+
+
+
 }

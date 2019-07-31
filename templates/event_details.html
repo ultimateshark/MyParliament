@@ -3,7 +3,7 @@
 {% block head %}
 	<title>My Parliament - EVENTS </title>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
-	<link rel="stylesheet" href="../static/css/olympiad_1.css">
+	<link rel="stylesheet" href="../static/css/event_det.css">
 	<link rel="stylesheet" href="../static/css/simple-grid.css">
 <script type="text/javascript">
 	function check_enrollment(){
@@ -21,41 +21,63 @@
 	}
 	
 </script>
+<style>
+	.event_det .img{
+	width:100%;
+	height:300px;
+	background: url('../static/img/event.png') no-repeat;
+	background-size: cover;
+	background-position: center;
+	border-top-left-radius: 10px;
+	border-top-right-radius:10px;
+}
+</style>
 {% endblock %}
 {% block body %}
 
-<div class="wrap" style="margin-top: 2%">
-		<div class="left_area">
-				<div class="row">
-					<div class="col-12 time">Start Date : {{event.start_date}}/ End Date : {{event.end_date}}</div>
-					<div class="col-12 time">Total Fee : Rs. {{event.fees}} </div>
-				</div>
-				<div class="olymp_name_txt">
-					 {{event.name}}
-				</div>
+
+<div class=event_det>
+	<div class="img"></div>
+	<div class="event_det_wrap">
+		<div class="event_name">TEDxHyderabad 2019</div>
+		<div class="event_time"> 22 Sep 2019 </div>
+		<div class="event_loc">Hyderabad , Telangana , India</div>
+	</div>								
 
 
-				<div class="row start_btn">
-					<div class="col-12  right" id="enroll">
-						<script type="text/javascript">check_enrollment()</script>
-						<a href="#"> <button>START</button></a>
-					</div>
-				</div>
-
-				<div class="olymp_txt" style="margin-left: -50px">EVENT</div>
-		</div>
-
-		<div class="input_area">
-			
-					<div class="col-12 wel_txt">
-						Description
-					</div>
-				
-					<h4>{{event.description}}</h4>
-				<br><br>
-				
-		</div>
 </div>
+
+	<div class="desc_h">Event Description</div>
+
+<div class="event_desc_wrap">
+	<div class="event_desc_cont">
+		The only way to discover the limits of the possible is to go beyond them into the impossible.” – Arthur C Clarke
+ 
+		The time may be limited, but the opportunities are limitless.
+		The capacity may be limited, but the potential is limitless.
+		The intelligence may be limited, but the wisdom is limitless.
+		The reality may be limited, but the imagination is limitless.
+		The years in life may be limited, but the life is the years is limitless.
+		 <br><br>
+		Right from being taught to draw inside the lines to follow the societal norms and expectations, we tie ourselves down inside the limits. But have you ever wondered what would Limitless look like to you? It’s time to win over yourself in this game of limits. Challenge the norms, follow your passion, imagine the (im)possibilities, and then go, get them. If you think you can, you CAN. 
+		 
+		We invite curious and questioning minds to join us in the amazing journey of exploration of defying limits.
+		 
+		On September 22, 2019 - join us for a full day of brilliant speakers, mind-blowing conversations, thought-provoking videos and fabulous networking opportunities!
+	</div>
+
+	<div class="other_det">
+		<button class="reg_btn">REGISTER</button> <br><br>
+		<div class="date">Start Date : 22-09-2019</div>
+		<div class="date">End Date : 23-09-2019</div>
+		<div class="date">Price :&#8377; 500</div>
+	</div>
+</div>
+
+
+
+
+
 
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script type="text/javascript">

@@ -61,9 +61,20 @@
 				</div> -->
 
 			<div style="margin-left:5%;">
-				<div class="course_name" style="margin-left:0px;">Nvidia and UE4 Technologies Practice</div>
-				<div class="tutor_name" style="margin-top:5px;">By Jason Naoi </div>
-				<div class="category" style="margin-top:20px;"><span>Category:</span> Nvidia , Photograhy , Software Development</div>
+
+			<div class="course_det_enr_wrap">
+				<div class="course_det_1">	
+					<div class="course_name" style="margin-left:0px;">Nvidia and UE4 Technologies Practice</div>
+					<div class="tutor_name" style="margin-top:5px;">By Jason Naoi </div>
+					<div class="category" style="margin-top:20px;"><span>Category:</span> Nvidia , Photograhy , Software Development</div>
+				</div>
+				<div class="enr_btn_wrap">
+					<button class="enr_btn">ENROLL  &nbsp;   &nbsp;   &#8377; 5,000</button>
+					<br><br>
+					<div class="dur"> <b>Duration : </b> 5 Weeks</div>
+					<div class="date"> <b>Start Date : </b> 24 Jul 2019</div>
+				</div>
+			</div>
 
 
 				<div class="tabs">
@@ -79,7 +90,7 @@
 
 
 <!-- Description Starts Here -->
-			<div id="desc" class="tab_cont">
+			<div id="desc" class="tab_cont" style="display: none;">
 				<div class="row" >
 					<div class="col-10">
 						<div class="plyr__video-embed" id="player" style="position: relative;">
@@ -103,43 +114,37 @@
 
 				</div>
 
+				<div class="course_last_det_wrap">
 
-				<div class="aud_h">Target Audience</div>
-
-				<ul class="target_aud">
-					<li>Students</li>
-					<li>Teachers</li>
-					<li>Professors</li>
-					<li>Application developers</li>
-					<li>Application designers</li>
-
-				</ul>
-
-
-				
-				<br><br>
-
-				<div class="row">
-					<div class="col-7">
-						<div class="details_h">Details</div>
-						<div class="det_txt">
-							{{course.duration}} Weeks<br>
-							Rs. {{course.fees}} <br>
-							Certificate
-						</div>
+					<div class="last">
+						<div class="aud_h">Target Audience</div>
+						<ul class="target_aud">
+							<li>Students</li>
+							<li>Teachers</li>
+							<li>Professors</li>
+							<li>Application developers</li>
+							<li>Application designers</li>
+						</ul>
 					</div>
-					<div class="col-4 tut_det">
-						<div class="abt_tut_h">About the Tutor</div>
-						<div class="tut_det_txt ">
-							<img src="../static/img/tut.png"> 
 
-							<div class="tut_txt">
-							{{course.author}} <br>
-							Courses
-						</div>
-						</div>
+					<div class="last">
+						<div class="aud_h">Requirements</div>
+						<ul class="target_aud">
+							<li>Basic Knowledge</li>
+							<li>Nothing</li>
+						</ul>
 					</div>
+
+					<div class="last">
+						<div class="aud_h">Perks</div>
+						<ul class="target_aud">
+							<li>Basic Knowledge</li>
+							<li>Nothing</li>
+						</ul>
+					</div>
+
 				</div>
+				
 
 			</div>
 
@@ -148,7 +153,8 @@
 
 <!-- Progress Starts Here -->
 
-<div id="progress" class="tab_cont" style="display: none;">
+<div id="progress" class="tab_cont" style="display: none;"	>
+	
 	Progress
 </div>
 
@@ -158,7 +164,15 @@
 <!-- Announcement Starts Here -->
 
 <div id="announce" class="tab_cont" style="display: none;">
-	Announcement
+
+	<!-- Jinja starts here -->
+	<div class="announce_wrap">
+		<div class="title">Productivity Hacks to Get More Done in 2018</div>
+		<div class="date">- 20 Jul 2019</div>
+		<div class="announce_cont">Stay focused by removing your Facebook newsfeed and replacing it with an inspirational quote. Disable the tool anytime you want to see what friends are up to!</div>
+	</div>
+
+	<!-- Jinja ends here -->
 </div>
 
 <!-- Announcement Progress Ends Here -->
@@ -167,8 +181,32 @@
 
 <!-- Tutor Starts Here -->
 
-<div id="tutor" class="tab_cont" style="display: none;">
-	Tutor
+<div id="tutor" class="tab_cont" >
+	<div class="tutor_wrap">
+		<div class="tut_det_wrap">
+			<div class="tut_img_wrap" 
+				 style="background: url('../static/img/cj.png') ;background-position: center;">
+				
+			</div>
+			<div class="tut_det">
+				<div class="tut_name">Carl Johnson</div>
+				<div class="tut_bio">"Man, what the hood done for me? Always dragging me down. Ever since I got out of the hood shit been cracking! That's everybody's dream, to get out of the hood..."</div>
+					<br>
+				<div class="exp_h">EXPERTISE</div>
+			<ul class="exp_list">
+				<li>Drug Trafficking</li>
+				<li>Gang Warfare</li>
+				<li>Robbery</li>
+				<li>Pimping</li>
+			</ul>
+
+				
+			</div>
+
+	</div>
+			
+
+</div>
 </div>
 
 <!-- Tutor Ends Here -->
@@ -206,4 +244,4 @@ function openTab(e, tab) {
 
 
 </body>
-</html>
+
