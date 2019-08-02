@@ -175,7 +175,7 @@ class Otp_details(db.Model):
 class User_details(db.Model):
     __tablename__="user_details"
     user_id=db.Column(db.Integer,primary_key=True)
-    account_type=db.Column(db.Boolean)
+    account_type=db.Column(db.Boolean)      #0=tutor   1=student
     name=db.Column(db.String(100))
     email=db.Column(db.String(50),unique=True,nullable=False)
     contact_no=db.Column(db.Integer,nullable=True)
