@@ -911,8 +911,9 @@ def submit_contact_form():
 	return redirect("/")
 
 
-
-
+@app.route("/prof")
+def prof():
+	return render_template("profUpdate.html")
 
 app.secret_key = "this is nothing but a secret key"
 
