@@ -82,7 +82,10 @@ def Home():
 			return render_template("home.html",nav_value=if_login())
 	except:
 		return render_template("home.html",nav_value=if_login())
-
+@app.route("/dashboard-main")
+@admin_login_required
+def Dashboard_main():
+	return render_template("admin_dashboard.html")
 
 @app.route("/dashboard/my-course")
 @login_required
@@ -145,9 +148,22 @@ def All_Olympiads():
 @app.route("/add-course-page")
 @admin_login_required
 def get_admin_add_course():
-	courses=Courses.query.all()
-	olympiads=Olympiad_details.query.all()
-	return render_template("admin_add_course.html",courses=courses,olympiads=olympiads)
+	return render_template("add_course1.html",type=1)
+
+@app.route("/add-event-page")
+@admin_login_required
+def get_admin_add_event_page():
+	return render_template("add_course1.html",type=2)
+
+@app.route("/add-olympiad-page")
+@admin_login_required
+def get_admin_add_olympiad():
+	return render_template("add_course1.html",type=3)
+
+@app.route("/add-assignment-page")
+@admin_login_required
+def get_admin_add_assignment():
+	return render_template("add_course1.html",type=4)
 
 
 @app.route("/add-lecture-page",methods=["GET","POST"])
