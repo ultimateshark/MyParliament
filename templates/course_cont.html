@@ -12,9 +12,9 @@
 <style>
 	::-webkit-scrollbar{
 		width:10px;
-	}	
+	}
 	::-webkit-scrollbar-thumb {
-  		background:rgba(32, 106, 134,0.8); 
+  		background:rgba(32, 106, 134,0.8);
   		border-radius: 20px;
 	}
 
@@ -31,16 +31,16 @@
 
 	};
 
-	request.send();	
+	request.send();
 	}
-	
+
 </script>
 <script type="text/javascript">
   function iframeLoaded() {
       var iFrameID = window.top.document.getElementById('loadframe');
       if(iFrameID) {
             iFrameID.height = iFrameID.contentWindow.document.body.scrollHeight + "px";
-      }   
+      }
   }
 </script>
 
@@ -51,7 +51,7 @@
 						<div class="course_name">{{course.name}}</div>
 							<div class="course_auth">By {{course.author}}</div>
 					</div>
-					
+
 					<div class="col-3 right" id="enroll">
 						<script type="text/javascript">check_enrollment()</script>
 						<a href="/course-enroll/{{course.course_id}}"><button class="enroll_btn">ENROLL NOW</button></a>
@@ -71,7 +71,7 @@
 			<div style="margin-left:5%;">
 
 			<div class="course_det_enr_wrap">
-				<div class="course_det_1">	
+				<div class="course_det_1">
 					<div class="course_name" style="margin-left:0px;">Nvidia and UE4 Technologies Practice</div>
 					<div class="tutor_name" style="margin-top:5px;">By Jason Naoi </div>
 					<div class="category" style="margin-top:20px;"><span>Category:</span> Nvidia , Photograhy , Software Development</div>
@@ -152,7 +152,7 @@
 					</div>
 
 				</div>
-				
+
 
 			</div>
 
@@ -162,7 +162,7 @@
 <!-- Progress Starts Here -->
 
 <div id="progress" class="tab_cont" style="display: none;"	>
-	
+
 	Progress
 </div>
 
@@ -192,9 +192,9 @@
 <div id="tutor" class="tab_cont"  style="display: none;">
 	<div class="tutor_wrap">
 		<div class="tut_det_wrap">
-			<div class="tut_img_wrap" 
+			<div class="tut_img_wrap"
 				 style="background: url('../static/img/cj.png') ;background-position: center;">
-				
+
 			</div>
 			<div class="tut_det">
 				<div class="tut_name">Carl Johnson</div>
@@ -202,17 +202,17 @@
 					<br>
 				<div class="exp_h">EXPERTISE</div>
 			<ul class="exp_list">
-				<li>Drug Trafficking</li>
-				<li>Gang Warfare</li>
-				<li>Robbery</li>
-				<li>Pimping</li>
+				<li>Databases</li>
+				<li>Algorithms</li>
+				<li>Deep Learning</li>
+				<li>Machine Learning</li>
 			</ul>
 
-				
+
 			</div>
 
 	</div>
-			
+
 
 </div>
 </div>
@@ -253,4 +253,3 @@ function openTab(e, tab) {
 
 
 </body>
-
