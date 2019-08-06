@@ -69,6 +69,14 @@
 	margin-top:10px;
 }
 
+.sch_wrap{
+	margin-left:10%;
+	margin-right: 10%;
+	margin-top:20px;
+	font-size: 1.1em;
+	
+}
+
 .desc_h{
 	font-size:1.3em;
 	font-weight: bold;
@@ -113,6 +121,49 @@
 .date:not(:first-child){
 	border-bottom: 1px solid #dadada;
 }
+
+
+.sch_wrap:{
+	margin-left:5%;
+	margin-right: 5%;
+	color: red;
+	margin-top:40px;
+}
+
+.sch{
+	display: flex;
+	flex-direction: column;
+	
+}
+
+.sch_day{
+	display: flex;
+	flex-direction: row;
+	border-bottom: 1px solid #dadada;
+	margin-right:20%;
+	padding-bottom: 20px;
+
+}
+
+.sch_day_h{
+	flex:0.7;
+	width: 100%;
+}
+
+.sch_desc{
+	flex:2;	
+	line-height: 25px;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 @media only screen and (max-width: 600px){

@@ -1,0 +1,116 @@
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800&display=swap');
+
+@font-face{
+	font-family:'Gilroy-ExtraBold';
+	src:url('../fonts/Gilroy-ExtraBold.ttf') format('truetype');
+}
+
+@font-face{
+	font-family:'SF';
+	src:url('../fonts/SF-Regular.ttf') format('truetype');
+}
+
+
+
+*{
+	font-family: 'Montserrat', sans-serif;
+}
+
+
+
+.logo{
+	font-weight: 700;
+	font-size: 2em;
+	padding-left:30px;
+	padding-top:20px;
+	line-height: 30px;
+	color:#fff;
+}
+
+.dont_have_acc{
+	position: relative;
+	top:78vh;
+	font-size:1.1em;
+	text-align: right;	
+	padding-right: 40px;
+	color:#fff;
+}
+
+.dont_have_acc a{
+	font-size:1.3em;
+	font-weight: bold;
+	color:#fff;
+}
+
+.dont_have_acc a:hover{
+	color:rgba(192,192,192,1);
+}
+
+
+.wel_txt{
+	font-size:1.4em;
+	font-weight:800;	
+}
+
+form input{
+	width:40%;
+	height:55px;
+	border:1.1px solid rgba(112,112,112,0.4);
+	font-size: 1em;
+	padding-left:10px;
+	font-family: 'SF';
+	min-width:250px;
+
+}
+
+a{
+	text-decoration: none;
+}
+
+form a:hover{
+	text-decoration: underline;
+}
+
+input[name^="pass"]{
+	margin-top:-1px;
+}
+input[name^="name"]{
+	border-bottom: none;
+}
+
+
+::placeholder {
+	color:rgba(112,112,112,0.5);
+}
+
+::-ms-input-placeholder{ 
+	color:rgba(112,112,112,0.5);
+}
+
+.login_btn{
+	width:41%;
+	height:55px;
+	border:none;
+	background: linear-gradient(135deg, #6a11cb 10%, #2575fc 90%);
+	font-size:1.2em;
+	font-weight: bold;
+	color:#fff;
+	min-width:250px;
+}
+
+.login_btn:hover{
+	opacity: 0.8;
+	cursor: pointer;
+}
+
+
+
+@media only screen and (max-width:600px){
+	form input{
+		width:90%;
+		background: red;
+		margin-left:5%;
+		margin-right: 5%;
+	}
+}

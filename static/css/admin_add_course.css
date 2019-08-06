@@ -1,21 +1,37 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Khula|Maven+Pro|Dosis|');
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800&display=swap');
+@font-face{
+	font-family:'Gilroy-ExtraBold';
+	src:url('../fonts/Gilroy-ExtraBold.ttf') format('truetype');
+}
 
+@font-face{
+	font-family:'Gilroy-Light';
+	src:url('../fonts/Gilroy-Light.ttf') format('truetype');
+}
+
+@font-face{
+	font-family:'SF';
+	src:url('../fonts/SF-Regular.ttf') format('truetype');
+}
+
+@font-face{
+	font-family:'Etna';
+	src:url('../fonts/etna.ttf') format('truetype');
+}
 
 
 *{
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'SF', sans-serif;
 }
-
 
 
 nav{
 	position: fixed;
 	width:100%;
 	left:0;
-	height:80px;
+	height:60px;
 	top:0px;
 	z-index:11;
+	background-color:#fff; 
 	box-shadow: 0px  1px 10px  rgba(0,0,0,0.3);
 }
 
@@ -25,7 +41,7 @@ nav{
 
 .list{
 	margin-right:80px;
-	padding-top:10px;
+	padding-top:20px;
 	float:right;
 	color:#000;
 	font-family: 'khula',sans-serif;	
@@ -52,18 +68,23 @@ nav ul li{
 	font-weight: 700;
 	font-size: 1.5em;
 	padding-left:30px;
-	padding-top:20px;
+	padding-top:10px;
+	font-family: 'Gilroy-ExtraBold';
 	line-height: 20px;
+	position: fixed;
 }
 
 .admin_txt{
 	font-size:0.6em;
 	color:red;
 	margin-left:-10px;
+	font-family: 'Gilroy-ExtraBold';
 }
 .up_course_h{
 		font-size:1.6em;
 		font-weight: bold;
+		margin-top:30px;
+		z-index: -10;
 
 	}	
 
@@ -73,34 +94,39 @@ form{
 
 form input{
 	align-self: center;
-	width:75%;
-	padding-top:5px;
-	padding-bottom:5px;
+	width:90%;
+	padding-top:15px;
+	padding-bottom:15px;
 	margin-top:10px;
 	padding-left: 5px;
+	border:1px solid #a9a9a9;
+	border-radius:5px;
 }
 
 textarea{
 	align-self: center;
-	width:75%;
+	width:90%;
 	margin-top:10px;
 	padding-left: 5px;
 	padding-top:5px;
 	padding-bottom:5px;
 	resize: none;
+	border-radius: 8px;
 	height: 200px;
 }
 
 
 form button{
 	align-self: center;
-	width:25.6%;
+	width:90%;
 	height:55px;
 	border:none;
+	margin-top:10px;
 	background: linear-gradient(35deg , #145792 , #23AEBE);
 	font-size:1.2em;
 	font-weight: bold;
 	color:#fff;
+	border-radius:8px;
 	min-width:250px;
 }
 
@@ -115,4 +141,41 @@ form button:hover{
 .week{
 	font-size:1.5em;
 	font-weight: bold;
+}
+
+.course_input{
+	margin-top:20px;
+}
+
+
+
+.create_opts{
+	padding-top:80px;
+	display: flex;
+	flex-direction: row;
+	width:100%;
+}
+
+.create_opts div{
+	flex:1;
+	background:rgba(238, 238, 238,0.5);
+	padding:10px 20px 10px 20px;
+	margin-left:10px;
+	margin-top:10px;
+	text-align: center;
+	border:1px solid #206A8E;
+	color:#000;
+	border-radius:10px;
+	font-weight: bold;
+}
+
+.create_opts div:hover{
+	background:#206A8E;
+	color:#fff;
+	transition: 0.3s ease-all;
+}
+
+.create_opts a{
+	color:#000;
+	text-decoration: none;
 }
