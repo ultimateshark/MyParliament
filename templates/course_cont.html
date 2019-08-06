@@ -72,15 +72,15 @@
 
 			<div class="course_det_enr_wrap">
 				<div class="course_det_1">
-					<div class="course_name" style="margin-left:0px;">Nvidia and UE4 Technologies Practice</div>
-					<div class="tutor_name" style="margin-top:5px;">By Jason Naoi </div>
-					<div class="category" style="margin-top:20px;"><span>Category:</span> Nvidia , Photograhy , Software Development</div>
+					<div class="course_name" style="margin-left:0px;">{%course.name%}</div>
+					<div class="tutor_name" style="margin-top:5px;">By {%course.author%} </div>
+<!--					<div class="category" style="margin-top:20px;"><span>Category:</span> Nvidia , Photograhy , Software Development</div>   -->
 				</div>
 				<div class="enr_btn_wrap">
 					<button class="enr_btn">ENROLL  &nbsp;   &nbsp;   &#8377; 5,000</button>
 					<br><br>
-					<div class="dur"> <b>Duration : </b> 5 Weeks</div>
-					<div class="date"> <b>Start Date : </b> 24 Jul 2019</div>
+					<div class="dur"> <b>Duration : </b> {%course.duration%}</div>
+					<div class="date"> <b>Start Date : </b> {%course.start_date%}</div>
 				</div>
 			</div>
 
@@ -116,12 +116,11 @@
 				<br>
 
 				<div class="course_desc">
-					The primary goal of this quick start guide is to introduce you to Unreal Engine 4`s (UE4) development environment. By the end of this guide, you`ll know how to set up and develop C++ Projects in UE4. This guide shows you how to create a new Unreal Engine project, add a new C++ class to it, compile the project, and add an instance of a new class to your level. By the time you reach the end of this guide, you`ll be able to see your programmed Actor floating above a table in the level.
-
-					This quick start guide shows you how to add assets to your Unreal Engine (UE4) games. By the end of this guide, you`ll know how to use the Project Browser to create new projects and navigate the Content Browser to find and add content. You`ll also know where to find information on the FBX Content Pipeline while learning how to use the Material Editor to modify Materials before applying them to a Static Mesh Actor.
-
-				</div>
-
+          {%
+            course.description
+            %}
+	         </div>
+<!--
 				<div class="course_last_det_wrap">
 
 					<div class="last">
@@ -153,7 +152,7 @@
 
 				</div>
 
-
+-->
 			</div>
 
 <!-- Description Ends Here -->
@@ -175,9 +174,11 @@
 
 	<!-- Jinja starts here -->
 	<div class="announce_wrap">
-		<div class="title">Productivity Hacks to Get More Done in 2018</div>
-		<div class="date">- 20 Jul 2019</div>
-		<div class="announce_cont">Stay focused by removing your Facebook newsfeed and replacing it with an inspirational quote. Disable the tool anytime you want to see what friends are up to!</div>
+    {% for a in course.announce %}
+		<div class="title">{% a.title %}</div>
+		<div class="date">- {% a.date %}</div>
+		<div class="announce_cont">{% a.description %}</div>
+    {% endfor %}
 	</div>
 
 	<!-- Jinja ends here -->
@@ -196,11 +197,12 @@
 				 style="background: url('../static/img/cj.png') ;background-position: center;">
 
 			</div>
+      {% for author in course.author %}
 			<div class="tut_det">
-				<div class="tut_name">Carl Johnson</div>
-				<div class="tut_bio">"Man, what the hood done for me? Always dragging me down. Ever since I got out of the hood shit been cracking! That's everybody's dream, to get out of the hood..."</div>
+				<div class="tut_name">{% author.name %}</div>
+				<div class="tut_bio">{% author.tutor_bio %}</div>
 					<br>
-				<div class="exp_h">EXPERTISE</div>
+<!--				<div class="exp_h">EXPERTISE</div>
 			<ul class="exp_list">
 				<li>Databases</li>
 				<li>Algorithms</li>
@@ -210,7 +212,7 @@
 
 
 			</div>
-
+-->
 	</div>
 
 

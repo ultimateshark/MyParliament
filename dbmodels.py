@@ -30,7 +30,7 @@ class Registered_Olympiads(db.Model):
     payment_done=db.Column(db.Boolean,default=0)
     status=db.Column(db.Boolean)
 
-class Progress(db.Model):
+class Rel_Progress(db.Model):           #many-many
     __tablename__="progress"
     p_id=db.Column(db.Integer,primary_key=True)
     user_id=db.Column(db.Integer,db.ForeignKey("user_details.user_id"))
@@ -51,11 +51,12 @@ class Courses(db.Model):
     __tablename__="courses"
     course_id=db.Column(db.Integer,primary_key=True)
     name=db.Column(db.String(100))
-    author=db.Column(db.String(50))
+    author=db.relationship("User_details",backref=db.backref("of_course"))
     duration=db.Column(db.String(20))
     fees=db.Column(db.Integer)
     description=db.Column(db.String(1000))
     demo_link=db.Column(db.String(1000))
+    start_date=db.Column(db.DateTime)
     weeks=db.relationship("Week",backref=db.backref('course'))
     announce=db.relationship("Announcements",backref=db.backref('of_course'))
 
@@ -64,6 +65,7 @@ class Announcements(db.Model):
     a_id=db.Column(db.Integer,primary_key=True)
     course_id=db.Column(db.Integer,db.ForeignKey("courses.course_id"),nullable=True)
     title=db.Column(db.String(60),nullable=True)
+    date=db.Column(db.DateTime)
     decription=db.Column(db.String(600),nullable=True)
 
 class Week(db.Model):
@@ -185,7 +187,11 @@ class User_details(db.Model):
     class_type=db.Column(db.String(2))      #l1, l2, l3, l4, l5
     instituton=db.Column(db.String(50))
     profile_pic=db.Column(db.LargeBinary)
+    #NEXT 2 only for tutor
+    tutor_bio=db.Column(db.String(200),nullable=True)
+    expertise=db.Column(db.String(100),nullable=True)
     address_id=db.Column(db.Integer,db.ForeignKey("address.address_id"),nullable=True)
+    course_id=db.Column(db.Integer,db.ForeignKey("courses.course_id"),nullable=True)
     registered_in_courses=db.relationship("Registered_Courses",backref=db.backref('subscribed_by'))
     registered_in_events=db.relationship("Registered_Events",backref=db.backref('subscribed_by'))
     solved_assignments=db.relationship("Solved_Assignments",backref=db.backref('subscribed_by'))
