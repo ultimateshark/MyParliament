@@ -31,7 +31,14 @@
 		}
 
 	</style>
-
+<script type="text/javascript">
+  function iframeLoaded() {
+      var iFrameID = document.getElementById('loadframe');
+      if(iFrameID) {
+            iFrameID.height = iFrameID.contentWindow.document.body.scrollHeight+100 + "px";
+      }   
+  }
+</script>
 
 
 {% endblock %}
@@ -52,7 +59,7 @@
 	</div>
 </div> -->
 
-<div class="course_det_sec">
+<div class="course_det_sec" style="margin-top: 7%">
 	<div class="course_det_wrap">
 
 
@@ -76,7 +83,7 @@
 		<div class="course_det_right_sec">
 			
 			
- 			<iframe src="/course-content/{{course_id}}"  id="loadframe" name="loadingFrame"  onload="iframeLoaded()" style="overflow: hidden;border:none;height:80%;width:90%;margin-left:5%;margin-right: 5%;" scrolling="no"></iframe> 
+ 			<iframe src="/course-content/{{course_id}}"  id="loadframe" name="loadingFrame"  onload="iframeLoaded()" style="overflow: hidden;border:none;width:90%;margin-left:5%;margin-right: 5%;" scrolling="no" height="100%"></iframe> 
 
 		</div>
 
@@ -84,14 +91,7 @@
 	</div> <!-- Course Details Wrap ending tags -->
 </div>
 
-<script type="text/javascript">
-  function iframeLoaded() {
-      var iFrameID = document.getElementById('loadframe');
-      if(iFrameID) {
-            iFrameID.height = iFrameID.contentWindow.document.body.scrollHeight+100 + "px";
-      }   
-  }
-</script>
+
 
 
 

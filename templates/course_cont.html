@@ -35,8 +35,16 @@
 	}
 	
 </script>
+<script type="text/javascript">
+  function iframeLoaded() {
+      var iFrameID = window.top.document.getElementById('loadframe');
+      if(iFrameID) {
+            iFrameID.height = iFrameID.contentWindow.document.body.scrollHeight + "px";
+      }   
+  }
+</script>
 
-<body>
+<body style="margin-top: 7%">
 
 <div class="row">
 				<!-- 	<div class="col-8">
@@ -78,7 +86,7 @@
 
 
 				<div class="tabs">
-					<div class="tabbtn active" onclick="openTab(event,'desc')">Description</div>
+					<div class="tabbtn active" onclick="openTab(event,'desc');">Description</div>
 					<div class="tabbtn" onclick="openTab(event,'progress')">Progress</div>
 					<div class="tabbtn" onclick="openTab(event,'announce')">Announcement</div>
 					<div class="tabbtn" onclick="openTab(event,'tutor')">Tutor</div>
@@ -90,7 +98,7 @@
 
 
 <!-- Description Starts Here -->
-			<div id="desc" class="tab_cont" style="display: none;">
+			<div id="desc" class="tab_cont">
 				<div class="row" >
 					<div class="col-10">
 						<div class="plyr__video-embed" id="player" style="position: relative;">
@@ -181,7 +189,7 @@
 
 <!-- Tutor Starts Here -->
 
-<div id="tutor" class="tab_cont" >
+<div id="tutor" class="tab_cont"  style="display: none;">
 	<div class="tutor_wrap">
 		<div class="tut_det_wrap">
 			<div class="tut_img_wrap" 
@@ -226,6 +234,7 @@
 
 <script>
 function openTab(e, tab) {
+	iframeLoaded()
   var i, x, tablinks;
   x = document.getElementsByClassName("tab_cont");
   for (i = 0; i < x.length; i++) {

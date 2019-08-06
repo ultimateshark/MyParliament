@@ -72,7 +72,7 @@ class Week(db.Model):
     lectures=db.relationship("Lecture_details",backref=db.backref('week'))
     assignment=db.Column(db.String(6000),nullable=True)
     course_id=db.Column(db.Integer,db.ForeignKey("courses.course_id"),nullable=True)
-    questions=db.relationship("Questions",backref=db.backref("olympiad"))
+    questions=db.relationship("Questions",backref=db.backref("week"))
 
 
 class Lecture_details(db.Model):
