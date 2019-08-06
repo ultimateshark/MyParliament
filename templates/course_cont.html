@@ -72,15 +72,15 @@
 
 			<div class="course_det_enr_wrap">
 				<div class="course_det_1">
-					<div class="course_name" style="margin-left:0px;">{%course.name%}</div>
-					<div class="tutor_name" style="margin-top:5px;">By {%course.author%} </div>
+					<div class="course_name" style="margin-left:0px;">{{ course.name }}</div>
+					<div class="tutor_name" style="margin-top:5px;">By {{ course.author }} </div>
 <!--					<div class="category" style="margin-top:20px;"><span>Category:</span> Nvidia , Photograhy , Software Development</div>   -->
 				</div>
 				<div class="enr_btn_wrap">
 					<button class="enr_btn">ENROLL  &nbsp;   &nbsp;   &#8377; 5,000</button>
 					<br><br>
-					<div class="dur"> <b>Duration : </b> {%course.duration%}</div>
-					<div class="date"> <b>Start Date : </b> {%course.start_date%}</div>
+					<div class="dur"> <b>Duration : </b> {{ course.duration }}</div>
+					<div class="date"> <b>Start Date : </b> {{ course.start_date }}</div>
 				</div>
 			</div>
 
@@ -116,9 +116,7 @@
 				<br>
 
 				<div class="course_desc">
-          {%
-            course.description
-            %}
+          {{ course.description }}
 	         </div>
 <!--
 				<div class="course_last_det_wrap">
@@ -175,9 +173,9 @@
 	<!-- Jinja starts here -->
 	<div class="announce_wrap">
     {% for a in course.announce %}
-		<div class="title">{% a.title %}</div>
-		<div class="date">- {% a.date %}</div>
-		<div class="announce_cont">{% a.description %}</div>
+		<div class="title">{{ a.title }}</div>
+		<div class="date">- {{ a.date }}</div>
+		<div class="announce_cont">{{ a.description }}</div>
     {% endfor %}
 	</div>
 
@@ -199,8 +197,8 @@
 			</div>
       {% for author in course.author %}
 			<div class="tut_det">
-				<div class="tut_name">{% author.name %}</div>
-				<div class="tut_bio">{% author.tutor_bio %}</div>
+				<div class="tut_name">{{ author.name }}</div>
+				<div class="tut_bio">{{ author.tutor_bio }}</div>
 					<br>
 <!--				<div class="exp_h">EXPERTISE</div>
 			<ul class="exp_list">

@@ -17,9 +17,9 @@
 
 	};
 
-	request.send();	
+	request.send();
 	}
-	
+
 </script>
 <style>
 	.event_det .img{
@@ -39,38 +39,26 @@
 <div class="event_det" style="margin-top: 7%">
 	<div class="img"></div>
 	<div class="event_det_wrap">
-		<div class="event_name">TEDxHyderabad 2019</div>
-		<div class="event_time"> 22 Sep 2019 </div>
-		<div class="event_loc">Hyderabad , Telangana , India</div>
-	</div>								
+		<div class="event_name"> {{ event.name }} </div>
+		<div class="event_time"> {{ event.start_date }} </div>
+		<div class="event_loc"> {{ event.venue }} </div>
+	</div>
 
 
 </div>
 
-	
+
 
 <div class="event_desc_wrap">
 	<div class="event_desc_cont">
 		<div class="desc_h">Event Description</div> <br>
-		The only way to discover the limits of the possible is to go beyond them into the impossible.” – Arthur C Clarke
- 
-		The time may be limited, but the opportunities are limitless.
-		The capacity may be limited, but the potential is limitless.
-		The intelligence may be limited, but the wisdom is limitless.
-		The reality may be limited, but the imagination is limitless.
-		The years in life may be limited, but the life is the years is limitless.
-		 <br><br>
-		Right from being taught to draw inside the lines to follow the societal norms and expectations, we tie ourselves down inside the limits. But have you ever wondered what would Limitless look like to you? It’s time to win over yourself in this game of limits. Challenge the norms, follow your passion, imagine the (im)possibilities, and then go, get them. If you think you can, you CAN. 
-		 
-		We invite curious and questioning minds to join us in the amazing journey of exploration of defying limits.
-		 
-		On September 22, 2019 - join us for a full day of brilliant speakers, mind-blowing conversations, thought-provoking videos and fabulous networking opportunities!
+{{ event.description }}
 	</div>
 
 	<div class="other_det">
 		<button class="reg_btn">REGISTER</button> <br><br>
-		<div class="date">Start Date : 22-09-2019</div>
-		<div class="date">End Date : 23-09-2019</div>
+		<div class="date">Start Date : {{ event.start_date }}</div>
+		<div class="date">End Date : {{ event.end_date }}</div>
 		<div class="date">Price :&#8377; 500</div>
 	</div>
 </div>
@@ -78,16 +66,17 @@
 
 	<div class="sch_wrap">
 		<div class="desc_h">Schedule</div> <br>
-		<div class="sch">
+        {% for s in event.schedule %}
+    <div class="sch">
 			<div class="sch_day">
-				<span class="sch_day_h">23-Aug-2019</span>
-				<span class="sch_desc">Right from being taught to draw inside the lines to follow the societal norms and expectations, we tie ourselves dow</span>
+				<span class="sch_day_h">{{ s.day }}</span>
+				<span class="sch_desc">{{ s.description }}</span>
 			</div>
 		</div>
-
+        {% endfor %}
 	</div>
 
-	
+
 
 
 
