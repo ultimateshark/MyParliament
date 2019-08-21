@@ -674,6 +674,11 @@ def registered_events():
 	event=user.events
 	return render_template("registered.html",event)
 
+@app.route("/dashboard/my-profile")
+@login_required
+def updateprofile():
+	return render_template("profUpdate.html")
+
 #Events
 @app.route("/add-course-page")
 @admin_login_required
