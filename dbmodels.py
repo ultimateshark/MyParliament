@@ -30,7 +30,7 @@ class Registered_Olympiads(db.Model):
     payment_done=db.Column(db.Boolean,default=0)
     status=db.Column(db.Boolean)
 
-class Rel_Progress(db.Model):           #many-many
+class Progress(db.Model):           #many-many
     __tablename__="progress"
     p_id=db.Column(db.Integer,primary_key=True)
     user_id=db.Column(db.Integer,db.ForeignKey("user_details.user_id"))
