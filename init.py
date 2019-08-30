@@ -468,7 +468,7 @@ def Start_olympiad(oly_id,question_no):
 					return redirect("/olympiad-details/"+str(oly_id))
 				if registered[0].payment_done:
 					question=olympiad.questions[question_no]
-					return render_template("olympiad_questions.html",score=registered[0].final_score,question=question,next=question_no+1,prev=question_no-1,olympiad=olympiad,nav_value=if_login())
+					return render_template("question1.html",score=registered[0].final_score,question=question,next=question_no+1,prev=question_no-1,olympiad=olympiad,nav_value=if_login())
 				else:
 					flash("Payment Not Done")
 					return redirect("/olympiad-details/"+str(oly_id))

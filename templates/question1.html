@@ -1,0 +1,534 @@
+{% extends 'navbar.html' %}
+
+{% block head %}
+	<title>My Parliament - Olympiads </title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<!--<link rel="stylesheet" href="../static/css/olympiad_1.css">
+	<link rel="stylesheet" href="../static/css/simple-grid.css">-->
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Khula|Maven+Pro|Dosis|');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800&display=swap');
+
+
+
+*{
+	font-family: 'Montserrat', sans-serif;
+}
+
+nav{
+	position: fixed;
+	width:100%;
+	left:0;
+	height:80px;
+	top:0px;
+	z-index:11;
+}
+
+.logo{
+	font-family: 'Josefin Sans',sans-serif;
+	font-size:1.7em;
+	position: absolute;
+	left:40px;
+	top:-20px;
+	padding-top:40px;
+	padding-left:10px;
+	padding-right:10px;
+}
+
+
+
+.list{
+	margin-right:80px;
+	padding-top:0px;
+	float:right;
+	color:#000;
+	font-family: 'khula',sans-serif;
+}
+
+
+.list a{
+	display: inline;
+	font-weight: bold;
+	font-size: 1.4em;
+	color:#000;
+	text-decoration: none;
+}
+
+nav ul li{
+	display: inline;
+	padding-left:30px;
+}
+
+.wrap{
+	display: flex;
+	height: 100%;
+}
+
+
+.left_area{
+	flex:1.6;
+	background: linear-gradient(135deg , #145792 , #23AEBE);
+	margin-top:55px;
+}
+
+.time{
+	padding-top:10px;
+	text-align: right;
+	padding-right: 15px;
+	font-size:1.3em;
+	font-weight: bold;
+	color:#fff;
+}
+
+.olymp_name_txt{
+	font-weight: 700;
+	font-size: 1.5em;
+	padding-left:30px;
+	padding-top:0px;
+	line-height: 30px;
+	color:#fff;
+}
+
+.dont_have_acc{
+	position: relative;
+	top:78vh;
+	font-size:1.1em;
+	text-align: right;
+	padding-right: 40px;
+	color:#fff;
+}
+
+.dont_have_acc a{
+	font-size:1.3em;
+	font-weight: bold;
+	color:#fff;
+}
+
+.dont_have_acc a:hover{
+	color:rgba(192,192,192,1);
+}
+
+.input_area{
+	flex:4;
+	margin-left:3%;
+	margin-top:8%;
+}
+
+.wel_txt{
+	font-size:2em;
+	font-weight:800;
+}
+
+.olymp_txt{
+	font-size:4em;
+	font-weight: bold;
+	transform: rotateZ(270deg);
+	float: left;
+	margin-left:-130px;
+	margin-top:-34%;
+	color:#fff;
+}
+
+a{
+	text-decoration: none;
+}
+
+form a:hover{
+	text-decoration: underline;
+}
+
+.start_btn{
+	margin-top:80%;
+}
+
+.start_btn button{
+	padding-left:40px;
+	padding-right:40px;
+	border:1px solid #fff;
+	border-radius:40px;
+	height:50px;
+	background: rgba(255,255,255,0.2);
+	font-size:1.2em;
+	font-weight: bold;
+	color:#fff;
+}
+
+.start_btn button:hover{
+	opacity: 0.8;
+	cursor: pointer;
+}
+
+
+.rules_cont{
+	padding-right:120px;
+	text-align: justify;
+}
+
+.rules_cont li{
+	padding-top:20px;
+}
+
+.ques_num{
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.sub_btns{
+	margin-top:20%;
+}
+
+.sub_btns button{
+	padding-left:40px;
+	padding-right:40px;
+	border:1px solid #000;
+	border-radius:40px;
+	height:50px;
+	background: rgba(255,255,255,0.2);
+	font-size:1em;
+	font-weight: bold;
+	color:#000;
+}
+
+.sub_btns button:hover{
+	opacity:0.8;
+	cursor: pointer;
+}
+
+
+.time_elapsed{
+	margin-top:75%;
+	padding-right:20px;
+}
+
+.time_el_val{
+	font-size:3.5em;
+	font-weight: bold;
+	color:#fff;
+}
+
+.time_el_txt{
+	font-size:1.2em;
+	padding-right: 40px;
+	color:#fff;
+}
+
+/**
+*** SIMPLE GRID
+*** (C) ZACH COLE 2016
+**/
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic);
+
+/* UNIVERSAL */
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 0;
+  font-size: 100%;
+}
+
+/* ROOT FONT STYLES */
+
+
+/* TYPOGRAPHY */
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.375rem;
+}
+
+h4 {
+  font-size: 1.125rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 0.875rem;
+}
+
+p {
+ /* font-size: 1.125rem;*/
+  font-weight: 200;
+  line-height: 1.8;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-regular {
+  font-weight: 400;
+}
+
+.font-heavy {
+  font-weight: 700;
+}
+
+/* POSITIONING */
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.justify {
+  text-align: justify;
+}
+
+/* ==== GRID SYSTEM ==== */
+
+.container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.row {
+  position: relative;
+  width: 100%;
+}
+
+.row [class^="col"] {
+  float: left;
+  margin: 0.5rem 2%;
+  min-height: 0.125rem;
+}
+
+
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12 {
+  width: 96%;
+}
+
+.col-1-sm {
+  width: 4.33%;
+}
+
+.col-2-sm {
+  width: 12.66%;
+}
+
+.col-3-sm {
+  width: 21%;
+}
+
+.col-4-sm {
+  width: 29.33%;
+}
+
+.col-5-sm {
+  width: 37.66%;
+}
+
+.col-6-sm {
+  width: 46%;
+}
+
+.col-7-sm {
+  width: 54.33%;
+}
+
+.col-8-sm {
+  width: 62.66%;
+}
+
+.col-9-sm {
+  width: 71%;
+}
+
+.col-10-sm {
+  width: 79.33%;
+}
+
+.col-11-sm {
+  width: 87.66%;
+}
+
+.col-12-sm {
+  width: 96%;
+}
+
+.row::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+
+
+.hidden-sm {
+  display: none;
+}
+
+@media only screen and (min-width: 33.75em) {  /* 540px */
+  .container {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 45em) {  /* 720px */
+  .col-1 {
+    width: 4.33%;
+  }
+
+  .col-2 {
+    width: 12.66%;
+  }
+
+  .col-3 {
+    width: 21%;
+  }
+
+  .col-4 {
+    width: 29.33%;
+  }
+
+  .col-5 {
+    width: 37.66%;
+  }
+
+  .col-6 {
+    width: 46%;
+  }
+
+  .col-7 {
+    width: 54.33%;
+  }
+
+  .col-8 {
+    width: 62.66%;
+  }
+
+  .col-9 {
+    width: 71%;
+  }
+
+  .col-10 {
+    width: 79.33%;
+  }
+
+  .col-11 {
+    width: 87.66%;
+  }
+
+  .col-12 {
+    width: 96%;
+  }
+
+  .hidden-sm {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 60em) { /* 960px */
+  .container {
+    width: 75%;
+    max-width: 60rem;
+  }
+}
+
+.buttons{
+	display: flex;
+	margin-top: 50px;
+}
+.previous{
+	flex-direction: row;
+	flex:1;
+
+}
+.click{
+	border-radius: 25px;
+	background-color: white;
+	font-size: 16px;
+	height: 60px;
+	width: 120px;
+}
+
+	</style>
+
+{% endblock %}
+{% block body %}
+
+<div class="wrap" style="margin-top: 2%">
+		<div class="left_area">
+				<div class="row">
+					<div class="col-12 time">Total Time : {{olympiad.duration}} hr.</div>
+				</div>
+				<div class="olymp_name_txt">
+					 {{olympiad.name}}
+				</div>
+
+
+				<div class="rowt time_elapsed right">
+					<div class="col-12   time_el_val">
+						{{score}}
+					</div>
+					<div class="time_el_txt">CURRENT SCORE</div>
+				</div>
+
+				<div class="olymp_txt"></div>
+		</div>
+
+		<div class="input_area">
+
+
+
+					<!-- <ol class="rules_cont"> -->
+						<div class="ques">
+							<div class="ques_num">Question {{next-1}}.</div><br>
+						{{question.question}}
+						<br>
+						<form action="/submit-olympiad-{{olympiad.oly_id}}-{{next}}" method="POST" style="display:flex;flex-direction:column">
+							 <div style="display:flex;flex-direction:row;margin-top:10px"><input type="radio" value="A" name="ques"> {{question.optA}}</div>
+							<div style="display:flex;flex-direction:row;margin-top:10px"> <input type="radio" value="B" name="ques"> {{question.optB}}</div>
+							 <div style="display:flex;flex-direction:row;margin-top:10px"><input type="radio" value="C" name="ques"> {{question.optC}}</div>
+							 <div style="display:flex;flex-direction:row;margin-top:10px"><input type="radio" value="D" name="ques"> {{question.optD}}</div>
+
+
+					<div class="buttons">
+						<div class="previous"><button type="button" class="click">Previous</button></div>
+						<div class="next"><button type="button" class="click">Next</div>
+					</div>
+					</form>
+				<br><br>
+
+		</div>
+</div>
+
+
+{% endblock %}
