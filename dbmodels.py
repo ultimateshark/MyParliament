@@ -30,7 +30,7 @@ class Registered_Olympiads(db.Model):
     payment_done=db.Column(db.Boolean,default=0)
     status=db.Column(db.Boolean)
 
-class Rel_Progress(db.Model):           #many-many
+class Progress(db.Model):           #many-many
     __tablename__="progress"
     p_id=db.Column(db.Integer,primary_key=True)
     user_id=db.Column(db.Integer,db.ForeignKey("user_details.user_id"))
@@ -66,7 +66,7 @@ class Announcements(db.Model):
     course_id=db.Column(db.Integer,db.ForeignKey("courses.course_id"),nullable=True)
     title=db.Column(db.String(60),nullable=True)
     date=db.Column(db.DateTime)
-    decription=db.Column(db.String(600),nullable=True)
+    description=db.Column(db.String(600),nullable=True)
 
 class Week(db.Model):
     __tablename__="week"

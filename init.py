@@ -180,9 +180,9 @@ def add_lecture_page():
 
 
 @app.route("/add-course",methods=["GET","POST"])
-@admin_login_required
+#@admin_login_required
 def Add_Course():
-	try:
+	# try:
 		if request.method=="POST":
 			name=request.form["name"]
 			author=request.form["author"]
@@ -190,12 +190,12 @@ def Add_Course():
 			fees=request.form["fees"]
 			demolink=request.form["demolink"]
 			description=request.form["description"]
-			new_course=Courses(name=name,author=author,duration=duration,fees=fees,demo_link=demolink,description=description)
+			new_course=Courses(name=name,duration=duration,fees=fees,demo_link=demolink,description=description)
 			db.session.add(new_course)
 			db.session.commit()
-			return redirect(url_for("get_admin_add_course"))
-	except Exception as e:
-		return redirect("/")
+			return render_template("add_course2.html")
+	# except Exception as e:
+	# 	return redirect("/")
 
 @app.route("/add-olympiad",methods=["GET","POST"])
 @admin_login_required
@@ -421,15 +421,15 @@ def Get_Enrollment_in_olympiad(oly_id):
 			registered=Registered_Olympiads.query.filter_by(oly_id=oly_id,user_id=user.user_id).all()
 			if len(registered)>0:
 				if registered[0].payment_done:
-					return jsonify(valid=True,link="/start-olympiad-"+str(oly_id)+"-0",data="Enrolled")
+					return jsonify(valid=True,link="/start-olympiad-"+str(oly_id)+"-0",data="Registered")
 				else:
 					return jsonify(valid=True,link="/pay-now/olympiad/"+str(oly_id),data="Pay Now")
 			else:
-				return jsonify(valid=True,link="/olympiad-enroll/"+str(oly_id),data="Enroll Now")
+				return jsonify(valid=True,link="/olympiad-enroll/"+str(oly_id),data="Register Now")
 		else:
-			return jsonify(valid=False,link="/olympiad-enroll/"+str(oly_id),data="Enroll Now")
+			return jsonify(valid=False,link="/olympiad-enroll/"+str(oly_id),data="Register Now")
 	except:
-		return jsonify(valid=False,link="/olympiad-enroll/"+str(oly_id),data="Enroll Now")
+		return jsonify(valid=False,link="/olympiad-enroll/"+str(oly_id),data="Register Now")
 
 
 
@@ -732,15 +732,15 @@ def Get_registration_in_event(event_id):
 			registered=Registered_Events.query.filter_by(event_id=event_id,user_id=user.user_id).all()
 			if len(registered)>0:
 				if registered[0].payment_done:
-					return jsonify(valid=True,link="#",data="Enrolled")
+					return jsonify(valid=True,link="#",data="Registered")
 				else:
 					return jsonify(valid=True,link="/pay-now/event/"+str(event_id),data="Pay Now")
 			else:
-				return jsonify(valid=True,link="/event-enroll/"+str(event_id),data="Enroll Now")
+				return jsonify(valid=True,link="/event-enroll/"+str(event_id),data="Register Now")
 		else:
-			return jsonify(valid=True,link="/event-enroll/"+str(event_id),data="Enroll Now")
+			return jsonify(valid=True,link="/event-enroll/"+str(event_id),data="Register Now")
 	except:
-		return jsonify(valid=True,link="/event-enroll/"+str(event_id),data="Enroll Now")
+		return jsonify(valid=True,link="/event-enroll/"+str(event_id),data="Register Now")
 
 #Events Ends
 

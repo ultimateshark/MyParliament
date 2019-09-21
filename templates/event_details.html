@@ -13,7 +13,7 @@
 
 	request.onload = function() {
 		var myArr = JSON.parse(this.responseText)
-	  document.getElementById("enroll").innerHTML="<a href="+myArr['link']+"><button>"+myArr['data']+"</button></a>"
+	  document.getElementById("enroll").innerHTML="<a href="+myArr['link']+"><button class='reg_btn'>"+myArr['data']+"</button></a>"
 
 	};
 
@@ -56,7 +56,10 @@
 	</div>
 
 	<div class="other_det">
+		<div id="enroll">
 		<button class="reg_btn">REGISTER</button> <br><br>
+		</div>
+		<script type="text/javascript">check_enrollment()</script>
 		<div class="date">Start Date : {{ event.start_date }}</div>
 		<div class="date">End Date : {{ event.end_date }}</div>
 		<div class="date">Price :&#8377; 500</div>
